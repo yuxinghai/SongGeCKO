@@ -1,0 +1,180 @@
+configfile: "config.yaml"
+rule all:
+    input:
+        "report.html"
+
+rule fastqc:
+    log:
+        expand("{log_dir}A1_combined_{filename}fastqc.log",log_dir=config["log_dir"],filename=config["inFiles"])
+
+    input:
+        expand("{raw_dir}A1_combined_{filename}.fastq.gz",raw_dir=config["raw_dir"],filename=config["inFiles"])
+
+    output:
+        html="{fastqc_dir}A1_combined_{filename}.html",
+        zip="{fastqc_dir}A1_combined_{filename}.zip"
+
+    params:
+        "-f fastq --noextract -o {wildcards.fastqc_dir}/{wildcards.filename}"
+
+    wrapper:
+        "0.17.1/bio/fastqc"
+
+
+rule gunzip:
+    input:
+        expand("{raw_dir}A1_combined_{filename}.fastq.gz",raw_dir=config["raw_dir"],filename=config["inFiles"])
+
+    output:
+        expand("{decode_dir}A1_combined_{filename}.fastq",decode_dir=config["decode_dir"],filename=config["inFiles"])
+
+    shell:
+        'gunzip -c {input} > {output}'
+
+
+rule merge_fastq:
+    input:
+        expand("{decode_dir}A1_combined_{filename}.fastq",decode_dir=config["decode_dir"],filename=config["inFiles"])
+
+    output:
+        expand("{decode_dir}A1_combined_merge.fastq",decode_dir=config["decode_dir"])
+
+    script:
+        expand("{script_dir}/fastq_process.sh",script_dir=config["script_dir"])
+
+    log:
+        expand("{log_dir}A1_combined.fastqmerge.log",log_dir=config["log_dir"])
+
+
+rule rowmerge:
+    input:
+        rules.merge_fastq.output
+
+    output:
+        expand("{decode_dir}A1_combined_merge.fastq",decode_dir=config["decode_dir"])
+
+    shell:
+        "cat {input}| paste -d '\!' - - - - |grep 'TCTTGTGGAAAGGACGAAACACCG' >{output}"
+
+
+
+sample_type=config["sample_A_type"]+config["sample_B_type"]
+rule sample_divide:
+    input:
+        rules.rowmerge.output
+
+    output:
+        expand("{decode_dir}{sample_type}.fq",decode_dir=config["decode_dir"],sample_type=sample_type)
+
+    script:
+        expand("{script_dir}/sample_divide.sh",script_dir=config["script_dir"])
+
+
+rule exact_20nt_sgRNA:
+    input:
+        rules.sample_divide.output
+
+    output:
+        expand("{sgRNA_dir}{sample_type}.fq",sgRNA_dir=config["sgRNA_dir"],sample_type=sample_type)
+
+    script:
+        expand("{script_dir}/03_exact_20nt_sgRNA.sh",script_dir=config["script_dir"])
+
+
+
+rule map:
+    input:
+        rules.exact_20nt_sgRNA.output
+
+    output:
+        expand("{map_dir}{sample_type}.sam",map_dir=config["map_dir"],sample_type=sample_type)
+
+    script:
+        expand("{script_dir}/04_map.sh",script_dir=config["script_dir"])
+
+
+
+rule count:
+    input:
+        rules.map.output
+
+    output:
+        expand("{count_dir}{screen_type}.csv",count_dir=config["count_dir"],screen_type=config["screen_type"])
+
+    script:
+        expand("{script_dir}/005_count.sh",script_dir=config["script_dir"])
+
+
+
+rule prefilter_mageck:
+    input:
+        rules.count.output
+
+    output:
+        expand("{mageck_dir}{screen_type}.fq",mageck_dir=config["mageck_dir"],screen_type=config["screen_type"])
+
+    script:
+        expand("{script_dir}/pre_merge_mageck.sh",script_dir=config["script_dir"])
+
+
+rule mageck:
+    input:
+        rules.prefilter_mageck.output
+
+    output:
+        expand("{mageck_dir}{screen_type}.csv",mageck_dir=config["mageck_dir"],screen_type=config["screen_type"])
+
+    script:
+        expand("{script_dir}/07_mageck_merge.sh",script_dir=config["script_dir"])
+
+
+rule report:
+    input:
+        rules.mageck.output
+    output:
+        "report.html"
+    run:
+        from snakemake.utils import report
+        with open(input[0]) as vcf:
+            n_calls = sum(1 for l in vcf if not l.startswith("#"))
+
+        report("""
+        An example variant calling workflow
+        ===================================
+
+        Reads were mapped to the Yeast
+        reference genome and variants were called jointly with
+        SAMtools/BCFtools.
+
+        This resulted in {n_calls} variants (see Table T1_).
+        """, output[0], T1=input[0])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
