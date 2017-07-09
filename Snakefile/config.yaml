@@ -1,0 +1,33 @@
+raw_dir: '/data5/zhoulab/data/SongGeCKO/N02054_ZN_80-56515317_ampliSEQ/PF_data/'
+fastqc_dir: '/data5/zhoulab/yuxinghai/SongGeCKO/file/01_fastqc/'
+log_dir: '/data5/zhoulab/yuxinghai/SongGeCKO/log/'
+inFiles:
+  - R1
+  - R2
+
+decode_dir: '/data5/zhoulab/yuxinghai/SongGeCKO/file/02_decode/'
+script_dir: '/data5/zhoulab/yuxinghai/SongGeCKO/bin/'
+
+sample_A_type:
+  - A1-F
+  - A2-F
+  - NC-A1-F1
+  - NC-A2-F2
+
+sample_B_type:
+  - B1-F
+  - B2-F
+  - NC-B1-F1
+  - NC-B2-F2
+
+sgRNA_dir: 'des_dir=/data5/zhoulab/yuxinghai/SongGeCKO/file/03_exact_20nt_sgRNA'
+map_dir: '/data5/zhoulab/yuxinghai/SongGeCKO/file/04_map'
+count_dir: '/data5/zhoulab/yuxinghai/SongGeCKO/file/05_count'
+
+screen_type:
+  - screen_A1
+  - screen_A2
+  - screen_B1
+  - screen_B2
+mageck_dir: 'data5/zhoulab/yuxinghai/SongGeCKO/file/07_mageck_merge'
+
