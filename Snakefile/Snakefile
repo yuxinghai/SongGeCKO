@@ -1,70 +1,105 @@
 configfile: "config.yaml"
+
 rule all:
     input:
-        "report.html"
+        expand("{fastqc_dir}A1_combined_sec_R1.html",fastqc_dir=config["fastqc_dir"]),
+        expand("{fastqc_dir}A1_combined_sec_R2.html",fastqc_dir=config["fastqc_dir"]),
+        expand("{fastqc_dir}A1_combined_sec_R1.zip",fastqc_dir=config["fastqc_dir"]),
+        expand("{fastqc_dir}A1_combined_sec_R2.zip",fastqc_dir=config["fastqc_dir"]),
+        expand("{mageck_merge_dir}{screen_type}_sec.csv",mageck_merge_dir=config["mageck_merge_dir"],screen_type=config["screen_type"]),
+        expand("{mageck_merge_dir}A.sgrna_summary.txt",mageck_merge_dir=config["mageck_merge_dir"]),
+        expand("{mageck_merge_dir}B.sgrna_summary.txt",mageck_merge_dir=config["mageck_merge_dir"]),
+        expand("{mageck_merge_dir}A.gene_summary.txt",mageck_merge_dir=config["mageck_merge_dir"]),
+        expand("{mageck_merge_dir}B.gene_summary.txt",mageck_merge_dir=config["mageck_merge_dir"]),
+        expand("{post_mageck_analysis_dir}{screen_type}_sec.csv",post_mageck_analysis_dir=config["post_mageck_analysis_dir"],screen_type=config["screen_type"]),
+        expand("{mageck_dir}rank_result.txt",mageck_dir=config["mageck_dir"])
+
+
+
+
 
 rule fastqc:
-    log:
-        expand("{log_dir}A1_combined_{filename}fastqc.log",log_dir=config["log_dir"],filename=config["inFiles"])
-
     input:
-        expand("{raw_dir}A1_combined_{filename}.fastq.gz",raw_dir=config["raw_dir"],filename=config["inFiles"])
+        R1=expand("{raw_dir}A1_combined_R1.fastq.gz",raw_dir=config["raw_dir"]),
+        R2=expand("{raw_dir}A1_combined_R2.fastq.gz",raw_dir=config["raw_dir"])
 
     output:
-        html="{fastqc_dir}A1_combined_{filename}.html",
-        zip="{fastqc_dir}A1_combined_{filename}.zip"
+        expand("{fastqc_dir}A1_combined_sec_R1.html",fastqc_dir=config["fastqc_dir"]),
+        expand("{fastqc_dir}A1_combined_sec_R2.html",fastqc_dir=config["fastqc_dir"]),
+        expand("{fastqc_dir}A1_combined_sec_R1.zip",fastqc_dir=config["fastqc_dir"]),
+        expand("{fastqc_dir}A1_combined_sec_R2.zip",fastqc_dir=config["fastqc_dir"])
 
-    params:
-        "-f fastq --noextract -o {wildcards.fastqc_dir}/{wildcards.filename}"
-
-    wrapper:
-        "0.17.1/bio/fastqc"
+    log:
+        expand("{log_dir}A1_combined_fastqc_sec.log",log_dir=config["log_dir"])
+    shell:
+        '''fastqc -f fastq --noextract -o {config[fastqc_dir]} {input.R1} >{log}
+         fastqc -f fastq --noextract -o {config[fastqc_dir]} {input.R2} >>{log}'''
 
 
 rule gunzip:
     input:
-        expand("{raw_dir}A1_combined_{filename}.fastq.gz",raw_dir=config["raw_dir"],filename=config["inFiles"])
+        R1=expand("{raw_dir}A1_combined_R1.fastq.gz",raw_dir=config["raw_dir"]),
+        R2=expand("{raw_dir}A1_combined_R2.fastq.gz",raw_dir=config["raw_dir"])
 
     output:
-        expand("{decode_dir}A1_combined_{filename}.fastq",decode_dir=config["decode_dir"],filename=config["inFiles"])
+        R1=expand("{decode_dir}A1_combined_1_sec.fastq",decode_dir=config["decode_dir"]),
+        R2=expand("{decode_dir}A1_combined_2_sec.fastq",decode_dir=config["decode_dir"])
 
     shell:
-        'gunzip -c {input} > {output}'
+        '''gunzip -c {input.R1} > {output.R1}
+         gunzip -c {input.R2} > {output.R2}
+        '''
 
 
 rule merge_fastq:
     input:
-        expand("{decode_dir}A1_combined_{filename}.fastq",decode_dir=config["decode_dir"],filename=config["inFiles"])
+        R1=expand("{decode_dir}A1_combined_1_sec.fastq",decode_dir=config["decode_dir"]),
+        R2=expand("{decode_dir}A1_combined_2_sec.fastq",decode_dir=config["decode_dir"])
 
     output:
-        expand("{decode_dir}A1_combined_merge.fastq",decode_dir=config["decode_dir"])
-
-    script:
-        expand("{script_dir}/fastq_process.sh",script_dir=config["script_dir"])
-
+        expand("{decode_dir}A1_combined_merge_sec.fastq",decode_dir=config["decode_dir"])
     log:
-        expand("{log_dir}A1_combined.fastqmerge.log",log_dir=config["log_dir"])
+        expand("{log_dir}A1_combined.fastqmerge_sec.log",log_dir=config["log_dir"])
+
+    shell:
+        "python {config[script_dir]}/readfq.py {input.R1} {input.R2} {output} >{log}"
 
 
-rule rowmerge:
+
+rule exact_barcode:
     input:
         rules.merge_fastq.output
-
     output:
-        expand("{decode_dir}A1_combined_merge.fastq",decode_dir=config["decode_dir"])
+        expand("{decode_dir}A1_rowmerge_sec.fastq",decode_dir=config["decode_dir"])
 
     shell:
         "cat {input}| paste -d '\!' - - - - |grep 'TCTTGTGGAAAGGACGAAACACCG' >{output}"
 
+rule row_separate:
+    input:
+        rules.exact_barcode.output
+    output:
+        expand("{decode_dir}A1_rowseprate_sec.fastq",decode_dir=config["decode_dir"])
+
+    shell:
+        "sed -r 's/\!/\n/g' {input} >{output}"
 
 
-sample_type=config["sample_A_type"]+config["sample_B_type"]
+
 rule sample_divide:
     input:
-        rules.rowmerge.output
+        rules.row_separate.output
 
     output:
-        expand("{decode_dir}{sample_type}.fq",decode_dir=config["decode_dir"],sample_type=sample_type)
+        A1=expand("{decode_dir}A1-F_sec.fq",decode_dir=config["decode_dir"]),
+        A2=expand("{decode_dir}A2-F_sec.fq",decode_dir=config["decode_dir"]),
+        NC_A1=expand("{decode_dir}NC-A1-F1_sec.fq",decode_dir=config["decode_dir"]),
+        NC_A2=expand("{decode_dir}NC-A2-F2_sec.fq",decode_dir=config["decode_dir"]),
+        B1=expand("{decode_dir}B1-F_sec.fq",decode_dir=config["decode_dir"]),
+        B2=expand("{decode_dir}B2-F_sec.fq",decode_dir=config["decode_dir"]),
+        NC_B1=expand("{decode_dir}NC-B1-F1_sec.fq",decode_dir=config["decode_dir"]),
+        NC_B2=expand("{decode_dir}NC-B2-F2_sec.fq",decode_dir=config["decode_dir"])
+        
 
     script:
         expand("{script_dir}/sample_divide.sh",script_dir=config["script_dir"])
@@ -75,7 +110,7 @@ rule exact_20nt_sgRNA:
         rules.sample_divide.output
 
     output:
-        expand("{sgRNA_dir}{sample_type}.fq",sgRNA_dir=config["sgRNA_dir"],sample_type=sample_type)
+        expand("{sgRNA_dir}{sample_type}.fq",sgRNA_dir=config["sgRNA_dir"],sample_type=config["sample_type"])
 
     script:
         expand("{script_dir}/03_exact_20nt_sgRNA.sh",script_dir=config["script_dir"])
@@ -87,7 +122,7 @@ rule map:
         rules.exact_20nt_sgRNA.output
 
     output:
-        expand("{map_dir}{sample_type}.sam",map_dir=config["map_dir"],sample_type=sample_type)
+        expand("{map_dir}{sample_type}_sec.sam",map_dir=config["map_dir"],sample_type=config["sample_type"])
 
     script:
         expand("{script_dir}/04_map.sh",script_dir=config["script_dir"])
@@ -99,10 +134,10 @@ rule count:
         rules.map.output
 
     output:
-        expand("{count_dir}{screen_type}.csv",count_dir=config["count_dir"],screen_type=config["screen_type"])
+        expand("{count_dir}{screen_type}_sec.csv",count_dir=config["count_dir"],screen_type=config["screen_type"])
 
     script:
-        expand("{script_dir}/005_count.sh",script_dir=config["script_dir"])
+        expand("{script_dir}/05_count.sh",script_dir=config["script_dir"])
 
 
 
@@ -111,10 +146,11 @@ rule prefilter_mageck:
         rules.count.output
 
     output:
-        expand("{mageck_dir}{screen_type}.fq",mageck_dir=config["mageck_dir"],screen_type=config["screen_type"])
+        expand("{mageck_dir}{screen_type}_sec.fq",mageck_dir=config["mageck_dir"],screen_type=config["screen_type"])
 
     script:
         expand("{script_dir}/pre_merge_mageck.sh",script_dir=config["script_dir"])
+
 
 
 rule mageck:
@@ -122,32 +158,73 @@ rule mageck:
         rules.prefilter_mageck.output
 
     output:
-        expand("{mageck_dir}{screen_type}.csv",mageck_dir=config["mageck_dir"],screen_type=config["screen_type"])
+        expand("{mageck_dir}{screen_type}_sec.csv",mageck_dir=config["mageck_dir"],screen_type=config["screen_type"]),
+        A1_sg=expand("{mageck_dir}A1.sgrna_summary.txt",mageck_dir=config["mageck_dir"]),
+        A2_sg=expand("{mageck_dir}A2.sgrna_summary.txt",mageck_dir=config["mageck_dir"]),
+        B1_sg=expand("{mageck_dir}B1.sgrna_summary.txt",mageck_dir=config["mageck_dir"]),
+        B2_sg=expand("{mageck_dir}B2.sgrna_summary.txt",mageck_dir=config["mageck_dir"]),
+        A1_ge=expand("{mageck_dir}A1.gene_summary.txt",mageck_dir=config["mageck_dir"]),
+        A2_ge=expand("{mageck_dir}A2.gene_summary.txt",mageck_dir=config["mageck_dir"]),
+        B1_ge=expand("{mageck_dir}B1.gene_summary.txt",mageck_dir=config["mageck_dir"]),
+        B2_ge=expand("{mageck_dir}B2.gene_summary.txt",mageck_dir=config["mageck_dir"])
+
+    script:
+        expand("{script_dir}/06_mageck.sh",script_dir=config["script_dir"])
+
+
+
+rule mageck_merge:
+    input:
+        rules.prefilter_mageck.output
+
+    output:
+        expand("{mageck_merge_dir}{screen_type}_sec.csv",mageck_merge_dir=config["mageck_merge_dir"],screen_type=config["screen_type"]),
+        A_sg=expand("{mageck_merge_dir}A.sgrna_summary.txt",mageck_merge_dir=config["mageck_merge_dir"]),
+        B_sg=expand("{mageck_merge_dir}B.sgrna_summary.txt",mageck_merge_dir=config["mageck_merge_dir"]),
+        A_ge=expand("{mageck_merge_dir}A.gene_summary.txt",mageck_merge_dir=config["mageck_merge_dir"]),
+        B_ge=expand("{mageck_merge_dir}B.gene_summary.txt",mageck_merge_dir=config["mageck_merge_dir"])
+        
 
     script:
         expand("{script_dir}/07_mageck_merge.sh",script_dir=config["script_dir"])
 
 
-rule report:
+
+rule mageck_result_analysis:
     input:
-        rules.mageck.output
+        A1=expand("{mageck_dir}A1.sgrna_summary.txt",mageck_dir=config["mageck_dir"]),
+        A2=expand("{mageck_dir}A2.sgrna_summary.txt",mageck_dir=config["mageck_dir"]),
+        B1=expand("{mageck_dir}B1.sgrna_summary.txt",mageck_dir=config["mageck_dir"]),
+        B2=expand("{mageck_dir}B2.sgrna_summary.txt",mageck_dir=config["mageck_dir"])
+
     output:
-        "report.html"
-    run:
-        from snakemake.utils import report
-        with open(input[0]) as vcf:
-            n_calls = sum(1 for l in vcf if not l.startswith("#"))
+        expand("{mageck_dir}mageck_result.txt",mageck_dir=config["mageck_dir"])
 
-        report("""
-        An example variant calling workflow
-        ===================================
+    shell:
+        "python {config[script_dir]}/mageck_result_analysis.py {input.A1} {input.A2} {input.B1} {input.B2}  {output}"
 
-        Reads were mapped to the Yeast
-        reference genome and variants were called jointly with
-        SAMtools/BCFtools.
 
-        This resulted in {n_calls} variants (see Table T1_).
-        """, output[0], T1=input[0])
+rule mageck_rank:
+    input:
+        rules.mageck_result_analysis.output
+
+    output:
+        expand("{mageck_dir}rank_result.txt",mageck_dir=config["mageck_dir"])
+
+    shell:
+        "python {config[script_dir]}/rank_mageckresult.py {input} {output}"
+
+
+rule mageck_quality:
+    input:
+        expand("{mageck_dir}{screen_type}_sec.csv",mageck_dir=config["mageck_dir"],screen_type=config["screen_type"])
+
+    output:
+        expand("{post_mageck_analysis_dir}{screen_type}_sec.csv",post_mageck_analysis_dir=config["post_mageck_analysis_dir"],screen_type=config["screen_type"])
+
+    script:
+        expand("{script_dir}/crispr_screen.R",script_dir=config["script_dir"])
+
 
 
 
