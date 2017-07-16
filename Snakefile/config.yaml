@@ -4,7 +4,7 @@ log_dir: '/data5/zhoulab/yuxinghai/SongGeCKO/log/'
 
 
 decode_dir: '/data5/zhoulab/yuxinghai/SongGeCKO/file/02_decode/'
-script_dir: '/data5/zhoulab/yuxinghai/SongGeCKO/bin/'
+script_dir: '/data5/zhoulab/yuxinghai/SongGeCKO/Snakefile/scripts'
 
 sample_type:
   - A1-F
