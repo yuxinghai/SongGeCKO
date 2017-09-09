@@ -8,13 +8,10 @@ This is crispr screen workflow for Songlab
 5/ Find the genes with enriched sgRNA comparing A* vs. NC-A*. (A/B: two sgRNA libraries; -1, -2: replicates)
 
 
-NOTE:
-    8 个barcode原始reader数
+NOTE
 
-    每个sgRNA 有多个reader mating
+    KEGG analysis
 
-    KEGG 分析
+    Non-target sequence    it's normal ,because self mutation or The same cell is not infected with a virus
 
-    Non-target sequence    出现正常，自发突变或者同一细胞内不止感染了一个病毒
-
-    为解决NC-A1&NC-A2相关性低，决定合并NC数据再进行富集比较，同时A/B库中readers数为0的sgRNA讲不进行分析
+    In order to solve the NC-A1 & NC-A2 correlation is low, the decision to merge the NC data and then enrich the comparison, while the A / B library number of 0 sgRNA speak not to analyze
