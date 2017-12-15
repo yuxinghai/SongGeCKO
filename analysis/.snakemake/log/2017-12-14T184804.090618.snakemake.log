@@ -1,0 +1,16 @@
+Building DAG of jobs...
+Provided cores: 28
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	fastqc
+	1
+
+rule fastqc:
+    input: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/data/N04664_ZN_80-105213358_ampliSEQ/PF_data/combined/NC-A1_combined_R1.fastq.gz, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/data/N04664_ZN_80-105213358_ampliSEQ/PF_data/combined/NC-A1_combined_R2.fastq.gz
+    output: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/01_fastqc/NC-A1_combined_R1_fastqc.html, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/01_fastqc/NC-A1_combined_R2_fastqc.html
+    jobid: 0
+    wildcards: result_dir=/data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results, sample=NC-A1_combined
+
+Finished job 0.
+1 of 1 steps (100%) done

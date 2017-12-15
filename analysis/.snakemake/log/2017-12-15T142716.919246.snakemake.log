@@ -1,0 +1,23 @@
+Building DAG of jobs...
+Provided cluster nodes: 1
+Job counts:
+	count	jobs
+	1	all
+	1	mageck
+	2
+
+rule mageck:
+    input: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/05_count/screen_A1.csv, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/05_count/screen_B1.csv
+    output: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A1.sgrna_summary.txt, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B1.sgrna_summary.txt, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A1.gene_summary.txt, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B1.gene_summary.txt
+    jobid: 8
+    wildcards: result_dir=/data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results
+
+Submitted job 8 with external jobid '1362828.mu01'.
+Error in rule mageck:
+    jobid: 8
+    output: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A1.sgrna_summary.txt, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B1.sgrna_summary.txt, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A1.gene_summary.txt, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B1.gene_summary.txt
+    cluster_jobid: 1362828.mu01
+
+Will exit after finishing currently running jobs.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2017-12-15T142716.919246.snakemake.log

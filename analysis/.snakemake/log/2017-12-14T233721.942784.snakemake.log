@@ -1,0 +1,18 @@
+Building DAG of jobs...
+Provided cores: 28
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	count
+	1
+
+rule count:
+    input: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/NC-B1.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/NC-A1.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/B1.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/A1.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/A2.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/B2.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/A3.sam
+    output: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/05_count/screen_A1.csv, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/05_count/screen_B1.csv
+    jobid: 0
+    wildcards: result_dir=/data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results
+
+Waiting at most 5 seconds for missing files.
+Will exit after finishing currently running jobs.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2017-12-14T233721.942784.snakemake.log

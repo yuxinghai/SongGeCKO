@@ -1,0 +1,18 @@
+Building DAG of jobs...
+Provided cores: 28
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	mageck
+	1
+
+rule mageck:
+    input: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/05_count/screen_A1.csv, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/05_count/screen_B1.csv
+    output: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A1.sgrna_summary.txt, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B1.sgrna_summary.txt, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A1.gene_summary.txt, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B1.gene_summary.txt
+    jobid: 0
+    wildcards: result_dir=/data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results
+
+Waiting at most 5 seconds for missing files.
+Will exit after finishing currently running jobs.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2017-12-15T125017.063548.snakemake.log

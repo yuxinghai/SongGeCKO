@@ -1,0 +1,111 @@
+[Fri Dec 15 14:45:02 2017] Building DAG of jobs...
+[Fri Dec 15 14:45:02 2017] Provided cores: 28
+[Fri Dec 15 14:45:02 2017] Rules claiming more threads will be scaled down.
+[Fri Dec 15 14:45:02 2017] Job counts:
+[Fri Dec 15 14:45:02 2017] 	count	jobs
+[Fri Dec 15 14:45:02 2017] 	1	count
+[Fri Dec 15 14:45:02 2017] 	1
+
+[Fri Dec 15 14:45:02 2017] rule count:
+[Fri Dec 15 14:45:02 2017]     input: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/NC-B1.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/NC-A1.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/B1.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/A1.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/A2.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/B2.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/A3.sam
+[Fri Dec 15 14:45:02 2017]     output: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/05_count/screen_A1.csv, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/05_count/screen_B1.csv
+[Fri Dec 15 14:45:02 2017]     jobid: 0
+[Fri Dec 15 14:45:02 2017]     wildcards: result_dir=/data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results
+
+#crispr: 65383
+Counting /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/NC-A1.sam ..
+1000000
+2000000
+3000000
+4000000
+5000000
+6000000
+7000000
+8000000
+9000000
+#crispr with count: 61622, total count: 8002755
+Counting /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/A1.sam ..
+1000000
+2000000
+3000000
+4000000
+5000000
+#crispr with count: 17721, total count: 5116841
+#crispr: 65383
+Counting /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/NC-A1.sam ..
+1000000
+2000000
+3000000
+4000000
+5000000
+6000000
+7000000
+8000000
+9000000
+#crispr with count: 61622, total count: 8002755
+Counting /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/A2.sam ..
+1000000
+2000000
+3000000
+4000000
+5000000
+6000000
+#crispr with count: 18665, total count: 5954786
+#crispr: 65383
+Counting /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/NC-A1.sam ..
+1000000
+2000000
+3000000
+4000000
+5000000
+6000000
+7000000
+8000000
+9000000
+#crispr with count: 61622, total count: 8002755
+Counting /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/A3.sam ..
+1000000
+2000000
+3000000
+4000000
+5000000
+#crispr with count: 18061, total count: 5781957
+#crispr: 58028
+Counting /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/NC-B1.sam ..
+1000000
+2000000
+3000000
+4000000
+5000000
+#crispr with count: 55343, total count: 5032296
+Counting /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/B1.sam ..
+1000000
+2000000
+3000000
+4000000
+5000000
+6000000
+7000000
+#crispr with count: 21503, total count: 5988825
+#crispr: 58028
+Counting /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/NC-B1.sam ..
+1000000
+2000000
+3000000
+4000000
+5000000
+#crispr with count: 55343, total count: 5032296
+Counting /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/B2.sam ..
+1000000
+2000000
+3000000
+4000000
+5000000
+6000000
+#crispr with count: 19808, total count: 6337887
+[Fri Dec 15 14:52:30 2017] Finished job 0.
+[Fri Dec 15 14:52:30 2017] 1 of 1 steps (100%) done
+
+Can't find file /home/yuxinghai/.vnc/mu01:97.pid
+You'll have to kill the Xvnc process manually
+

@@ -1,0 +1,30 @@
+Thu Dec 14 22:50:39 CST 2017
+python /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/script/mkpool.py /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map
+Thu Dec 14 22:50:40 CST 2017
+Thu Dec 14 22:50:40 CST 2017
+bowtie-build /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/crisprpool_A.fa /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/bowtie.A_idx/crisprpool_A
+Thu Dec 14 22:50:40 CST 2017
+Thu Dec 14 22:50:40 CST 2017
+bowtie -p 12 --best --strata --norc -m 1 -l 20 -n 3 -S /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/bowtie.A_idx/crisprpool_A /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_A1.fq /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/A1.sam
+Thu Dec 14 22:51:41 CST 2017
+Thu Dec 14 22:51:41 CST 2017
+bowtie -p 12 --best --strata --norc -m 1 -l 20 -n 3 -S /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/bowtie.A_idx/crisprpool_A /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_NC-A1.fq /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/NC-A1.sam
+Thu Dec 14 22:53:19 CST 2017
+Thu Dec 14 22:53:19 CST 2017
+bowtie -p 12 --best --strata --norc -m 1 -l 20 -n 3 -S /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/bowtie.A_idx/crisprpool_A /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_A2.fq /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/A2.sam
+Thu Dec 14 22:54:27 CST 2017
+Thu Dec 14 22:54:27 CST 2017
+bowtie -p 12 --best --strata --norc -m 1 -l 20 -n 3 -S /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/bowtie.A_idx/crisprpool_A /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_A3.fq /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/A3.sam
+Thu Dec 14 22:55:33 CST 2017
+Thu Dec 14 22:55:33 CST 2017
+bowtie-build /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/crisprpool_B.fa /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/bowtie.B_idx/crisprpool_B
+Thu Dec 14 22:55:33 CST 2017
+Thu Dec 14 22:55:33 CST 2017
+bowtie -p 12 --best --strata --norc -m 1 -l 20 -n 3 -S /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/bowtie.B_idx/crisprpool_B /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_B1.fq /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/B1.sam
+Thu Dec 14 22:56:50 CST 2017
+Thu Dec 14 22:56:50 CST 2017
+bowtie -p 12 --best --strata --norc -m 1 -l 20 -n 3 -S /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/bowtie.B_idx/crisprpool_B /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_NC-B1.fq /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/NC-B1.sam
+Thu Dec 14 22:57:50 CST 2017
+Thu Dec 14 22:57:50 CST 2017
+bowtie -p 12 --best --strata --norc -m 1 -l 20 -n 3 -S /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/bowtie.B_idx/crisprpool_B /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_B2.fq /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/B2.sam
+Thu Dec 14 22:59:02 CST 2017

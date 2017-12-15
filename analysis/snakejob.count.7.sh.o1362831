@@ -1,0 +1,15 @@
+Fri Dec 15 14:45:04 CST 2017
+python /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/script/shcount.py /data2/zhoulab/yuxinghai/songlab/SongGeCKO/anno/human_geckov2_library_a.csv /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/NC-A1.sam /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/A1.sam -o /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/05_count/screen_A1.csv
+Fri Dec 15 14:46:38 CST 2017
+Fri Dec 15 14:46:38 CST 2017
+python /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/script/shcount.py /data2/zhoulab/yuxinghai/songlab/SongGeCKO/anno/human_geckov2_library_a.csv /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/NC-A1.sam /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/A2.sam -o /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/05_count/screen_A2.csv
+Fri Dec 15 14:48:11 CST 2017
+Fri Dec 15 14:48:11 CST 2017
+python /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/script/shcount.py /data2/zhoulab/yuxinghai/songlab/SongGeCKO/anno/human_geckov2_library_a.csv /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/NC-A1.sam /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/A3.sam -o /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/05_count/screen_A3.csv
+Fri Dec 15 14:49:45 CST 2017
+Fri Dec 15 14:49:45 CST 2017
+python /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/script/shcount.py /data2/zhoulab/yuxinghai/songlab/SongGeCKO/anno/human_geckov2_library_b.csv /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/NC-B1.sam /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/B1.sam -o /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/05_count/screen_B1.csv
+Fri Dec 15 14:51:06 CST 2017
+Fri Dec 15 14:51:06 CST 2017
+python /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/script/shcount.py /data2/zhoulab/yuxinghai/songlab/SongGeCKO/anno/human_geckov2_library_b.csv /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/NC-B1.sam /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/B2.sam -o /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/05_count/screen_B2.csv
+Fri Dec 15 14:52:30 CST 2017

@@ -1,0 +1,26 @@
+Building DAG of jobs...
+Provided cores: 28
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	sample_divide
+	1
+
+rule sample_divide:
+    input: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/NC-A1_combined_merge_exacB.fastq
+    output: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/NC-B1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/NC-A1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/A1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/B1.fq
+    jobid: 0
+    wildcards: result_dir=/data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results
+
+Error in rule sample_divide:
+    jobid: 0
+    output: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/NC-B1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/NC-A1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/A1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/B1.fq
+
+RuleException:
+CalledProcessError in line 87 of /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/analysis/Snakefile:
+Command ' set -euo pipefail;  bash /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/script/sample_divide.sh /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/NC-A1_combined_merge_exacB.fastq ' returned non-zero exit status 1.
+  File "/data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/analysis/Snakefile", line 87, in __rule_sample_divide
+  File "/home/yuxinghai/.conda/envs/py36/lib/python3.6/concurrent/futures/thread.py", line 56, in run
+Will exit after finishing currently running jobs.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2017-12-14T182213.117948.snakemake.log

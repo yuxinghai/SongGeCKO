@@ -1,0 +1,23 @@
+Building DAG of jobs...
+Provided cluster nodes: 4
+Job counts:
+	count	jobs
+	1	all
+	1	map
+	2
+
+rule map:
+    input: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_NC-B1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_NC-A1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_B1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_A1.fq
+    output: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/NC-B1.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/NC-A1.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/B1.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/A1.sam
+    jobid: 6
+    wildcards: result_dir=/data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results
+
+Submitted job 6 with external jobid '1362814.mu01'.
+Error in rule map:
+    jobid: 6
+    output: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/NC-B1.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/NC-A1.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/B1.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/A1.sam
+    cluster_jobid: 1362814.mu01
+
+Will exit after finishing currently running jobs.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2017-12-14T211739.928638.snakemake.log

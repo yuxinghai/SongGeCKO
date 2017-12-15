@@ -1,0 +1,26 @@
+Building DAG of jobs...
+Provided cores: 28
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	mageck
+	1
+
+rule mageck:
+    input: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/05_count/screen_A1.csv, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/05_count/screen_B1.csv
+    output: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A1.sgrna_summary.txt, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B1.sgrna_summary.txt, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A1.gene_summary.txt, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B1.gene_summary.txt
+    jobid: 0
+    wildcards: result_dir=/data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results
+
+Error in rule mageck:
+    jobid: 0
+    output: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A1.sgrna_summary.txt, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B1.sgrna_summary.txt, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A1.gene_summary.txt, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B1.gene_summary.txt
+
+RuleException:
+CalledProcessError in line 151 of /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/analysis/Snakefile:
+Command ' set -euo pipefail;  bash /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/script/06_mageck.sh ' returned non-zero exit status 127.
+  File "/data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/analysis/Snakefile", line 151, in __rule_mageck
+  File "/home/yuxinghai/.conda/envs/py36/lib/python3.6/concurrent/futures/thread.py", line 56, in run
+Will exit after finishing currently running jobs.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2017-12-14T234810.918171.snakemake.log

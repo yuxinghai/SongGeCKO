@@ -1,0 +1,28 @@
+Building DAG of jobs...
+Provided cluster nodes: 1
+Job counts:
+	count	jobs
+	1	all
+	1	exact_20nt_sgRNA
+	1	exact_barcode
+	1	fastqc
+	1	map
+	1	merge_fastq
+	1	sample_divide
+	7
+
+rule merge_fastq:
+    input: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/NC-A1_combined_R1.fastq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/NC-A1_combined_R2.fastq
+    output: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/NC-A1_combined_merge.fastq
+    jobid: 1
+    wildcards: result_dir=/data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results, sample=NC-A1_combined
+
+Submitted job 1 with external jobid '1362779.mu01'.
+Error in rule merge_fastq:
+    jobid: 1
+    output: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/NC-A1_combined_merge.fastq
+    cluster_jobid: 1362779.mu01
+
+Will exit after finishing currently running jobs.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2017-12-14T174549.417384.snakemake.log

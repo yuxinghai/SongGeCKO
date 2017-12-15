@@ -1,0 +1,45 @@
+Building DAG of jobs...
+Provided cluster nodes: 1
+Job counts:
+	count	jobs
+	1	all
+	1	exact_20nt_sgRNA
+	1	map
+	1	sample_divide
+	4
+
+rule sample_divide:
+    input: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/NC-A1_combined_merge_exacB.fastq
+    output: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/NC-B1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/NC-A1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/A1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/B1.fq
+    jobid: 4
+    wildcards: result_dir=/data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results
+
+Submitted job 4 with external jobid '1362797.mu01'.
+Finished job 4.
+1 of 4 steps (25%) done
+
+rule exact_20nt_sgRNA:
+    input: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/NC-B1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/NC-A1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/A1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/B1.fq
+    output: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_NC-B1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_NC-A1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_B1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_A1.fq
+    jobid: 6
+    wildcards: result_dir=/data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results
+
+Submitted job 6 with external jobid '1362800.mu01'.
+Finished job 6.
+2 of 4 steps (50%) done
+
+rule map:
+    input: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_NC-B1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_NC-A1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_B1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_A1.fq
+    output: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/NC-B1.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/NC-A1.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/B1.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/A1.sam
+    jobid: 7
+    wildcards: result_dir=/data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results
+
+Submitted job 7 with external jobid '1362801.mu01'.
+Error in rule map:
+    jobid: 7
+    output: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/NC-B1.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/NC-A1.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/B1.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/A1.sam
+    cluster_jobid: 1362801.mu01
+
+Will exit after finishing currently running jobs.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2017-12-14T202135.205813.snakemake.log

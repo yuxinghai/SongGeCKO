@@ -1,0 +1,5 @@
+Building DAG of jobs...
+MissingInputException in line 36 of /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/analysis/Snakefile:
+Missing input files for rule gunzip:
+/data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/data/N04664_ZN_80-105213358_ampliSEQ/PF_data/combined/YN17-10-10_combined_R2.fastq.gz
+/data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/data/N04664_ZN_80-105213358_ampliSEQ/PF_data/combined/YN17-10-10_combined_R1.fastq.gz

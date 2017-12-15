@@ -1,0 +1,28 @@
+Building DAG of jobs...
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	map
+	2
+
+rule map:
+    input: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_NC-B1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_NC-A1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_B1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_A1.fq
+    output: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/NC-B1.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/NC-A1.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/B1.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/A1.sam
+    jobid: 1
+    wildcards: result_dir=/data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results
+
+Terminating processes on user request.
+Error in rule map:
+    jobid: 1
+    output: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/NC-B1.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/NC-A1.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/B1.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/A1.sam
+
+RuleException:
+CalledProcessError in line 115 of /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/analysis/Snakefile:
+Command ' set -euo pipefail;  bash /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/script/04_map.sh ' died with <Signals.SIGINT: 2>.
+  File "/data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/analysis/Snakefile", line 115, in __rule_map
+  File "/home/yuxinghai/.conda/envs/py36/lib/python3.6/concurrent/futures/thread.py", line 56, in run
+Removing output files of failed job map since they might be corrupted:
+/data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/A1.sam
+Complete log: .snakemake/log/2017-12-14T211642.310122.snakemake.log

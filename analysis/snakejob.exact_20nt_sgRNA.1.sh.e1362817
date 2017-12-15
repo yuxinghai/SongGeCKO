@@ -1,0 +1,20 @@
+[Thu Dec 14 22:37:58 2017] Building DAG of jobs...
+[Thu Dec 14 22:37:58 2017] Provided cores: 28
+[Thu Dec 14 22:37:58 2017] Rules claiming more threads will be scaled down.
+[Thu Dec 14 22:37:58 2017] Job counts:
+[Thu Dec 14 22:37:58 2017] 	count	jobs
+[Thu Dec 14 22:37:58 2017] 	1	exact_20nt_sgRNA
+[Thu Dec 14 22:37:58 2017] 	1
+
+[Thu Dec 14 22:37:58 2017] rule exact_20nt_sgRNA:
+[Thu Dec 14 22:37:58 2017]     input: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/NC-B1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/NC-A1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/A1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/B1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/A2.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/A3.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/B2.fq
+[Thu Dec 14 22:37:58 2017]     output: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_NC-B1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_NC-A1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_B1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_A1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_A2.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_B2.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_A3.fq
+[Thu Dec 14 22:37:58 2017]     jobid: 0
+[Thu Dec 14 22:37:58 2017]     wildcards: result_dir=/data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results
+
+[Thu Dec 14 22:50:24 2017] Finished job 0.
+[Thu Dec 14 22:50:24 2017] 1 of 1 steps (100%) done
+
+Can't find file /home/yuxinghai/.vnc/mu01:83.pid
+You'll have to kill the Xvnc process manually
+

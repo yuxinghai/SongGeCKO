@@ -1,0 +1,15 @@
+Fri Dec 15 14:40:50 CST 2017
+mageck test -k /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/screen_A1.txt -t A1 -c NC-A1 --norm-method total --normcounts-to-file --sort-criteria pos --adjust-method fdr -n /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A1 --pdf-report
+Fri Dec 15 14:41:23 CST 2017
+Fri Dec 15 14:41:24 CST 2017
+mageck test -k /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/screen_B1.txt -t B1 -c NC-B1 --norm-method total --normcounts-to-file --sort-criteria pos --adjust-method fdr -n /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B1 --pdf-report
+Fri Dec 15 14:41:41 CST 2017
+Fri Dec 15 14:41:41 CST 2017
+mageck test -k /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/screen_A2.txt -t A2 -c NC-A1 --norm-method total --normcounts-to-file --sort-criteria pos --adjust-method fdr -n /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A2 --pdf-report
+Fri Dec 15 14:42:14 CST 2017
+Fri Dec 15 14:42:14 CST 2017
+mageck test -k /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/screen_B2.txt -t B2 -c NC-B1 --norm-method total --normcounts-to-file --sort-criteria pos --adjust-method fdr -n /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B2 --pdf-report
+Fri Dec 15 14:42:31 CST 2017
+Fri Dec 15 14:42:31 CST 2017
+mageck test -k /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/screen_A3.txt -t A3 -c NC-A1 --norm-method total --normcounts-to-file --sort-criteria pos --adjust-method fdr -n /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A3 --pdf-report
+Fri Dec 15 14:43:03 CST 2017

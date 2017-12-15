@@ -1,0 +1,55 @@
+[Thu Dec 14 22:50:36 2017] Building DAG of jobs...
+[Thu Dec 14 22:50:36 2017] Provided cores: 28
+[Thu Dec 14 22:50:36 2017] Rules claiming more threads will be scaled down.
+[Thu Dec 14 22:50:36 2017] Job counts:
+[Thu Dec 14 22:50:36 2017] 	count	jobs
+[Thu Dec 14 22:50:36 2017] 	1	map
+[Thu Dec 14 22:50:36 2017] 	1
+
+[Thu Dec 14 22:50:36 2017] rule map:
+[Thu Dec 14 22:50:36 2017]     input: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_NC-B1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_NC-A1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_B1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_A1.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_A2.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_B2.fq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/03_20nt_sgRNA/sg_A3.fq
+[Thu Dec 14 22:50:36 2017]     output: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/NC-B1.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/NC-A1.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/B1.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/A1.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/A2.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/B2.sam, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/04_map/A3.sam
+[Thu Dec 14 22:50:36 2017]     jobid: 0
+[Thu Dec 14 22:50:36 2017]     wildcards: result_dir=/data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results
+
+# reads processed: 5468758
+# reads with at least one reported alignment: 5116841 (93.56%)
+# reads that failed to align: 203811 (3.73%)
+# reads with alignments suppressed due to -m: 148106 (2.71%)
+Reported 5116841 alignments to 1 output stream(s)
+# reads processed: 9278594
+# reads with at least one reported alignment: 8002755 (86.25%)
+# reads that failed to align: 709461 (7.65%)
+# reads with alignments suppressed due to -m: 566378 (6.10%)
+Reported 8002755 alignments to 1 output stream(s)
+# reads processed: 6079758
+# reads with at least one reported alignment: 5954786 (97.94%)
+# reads that failed to align: 115669 (1.90%)
+# reads with alignments suppressed due to -m: 9303 (0.15%)
+Reported 5954786 alignments to 1 output stream(s)
+# reads processed: 5919781
+# reads with at least one reported alignment: 5781957 (97.67%)
+# reads that failed to align: 118295 (2.00%)
+# reads with alignments suppressed due to -m: 19529 (0.33%)
+Reported 5781957 alignments to 1 output stream(s)
+# reads processed: 7350228
+# reads with at least one reported alignment: 5988825 (81.48%)
+# reads that failed to align: 1103328 (15.01%)
+# reads with alignments suppressed due to -m: 258075 (3.51%)
+Reported 5988825 alignments to 1 output stream(s)
+# reads processed: 5769437
+# reads with at least one reported alignment: 5032296 (87.22%)
+# reads that failed to align: 438801 (7.61%)
+# reads with alignments suppressed due to -m: 298340 (5.17%)
+Reported 5032296 alignments to 1 output stream(s)
+# reads processed: 6622549
+# reads with at least one reported alignment: 6337887 (95.70%)
+# reads that failed to align: 168287 (2.54%)
+# reads with alignments suppressed due to -m: 116375 (1.76%)
+Reported 6337887 alignments to 1 output stream(s)
+[Thu Dec 14 22:59:02 2017] Finished job 0.
+[Thu Dec 14 22:59:02 2017] 1 of 1 steps (100%) done
+
+Can't find file /home/yuxinghai/.vnc/mu01:84.pid
+You'll have to kill the Xvnc process manually
+

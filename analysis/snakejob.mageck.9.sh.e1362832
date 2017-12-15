@@ -1,0 +1,513 @@
+[Fri Dec 15 14:52:33 2017] Building DAG of jobs...
+[Fri Dec 15 14:52:33 2017] Provided cores: 28
+[Fri Dec 15 14:52:33 2017] Rules claiming more threads will be scaled down.
+[Fri Dec 15 14:52:33 2017] Job counts:
+[Fri Dec 15 14:52:33 2017] 	count	jobs
+[Fri Dec 15 14:52:33 2017] 	1	mageck
+[Fri Dec 15 14:52:33 2017] 	1
+
+[Fri Dec 15 14:52:33 2017] rule mageck:
+[Fri Dec 15 14:52:33 2017]     input: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/05_count/screen_A1.csv, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/05_count/screen_B1.csv
+[Fri Dec 15 14:52:33 2017]     output: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A1.sgrna_summary.txt, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B1.sgrna_summary.txt, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A1.gene_summary.txt, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B1.gene_summary.txt
+[Fri Dec 15 14:52:33 2017]     jobid: 0
+[Fri Dec 15 14:52:33 2017]     wildcards: result_dir=/data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results
+
+INFO  @ Fri, 15 Dec 2017 14:52:34: Parameters: /home/yuxinghai/.conda/envs/py27/bin/mageck test -k /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/screen_A1.txt -t A1 -c NC-A1 --norm-method total --normcounts-to-file --sort-criteria pos --adjust-method fdr -n /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A1 --pdf-report 
+INFO  @ Fri, 15 Dec 2017 14:52:34: Welcome to MAGeCK v0.5.6. Command: test 
+INFO  @ Fri, 15 Dec 2017 14:52:34: Loading count table from /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/screen_A1.txt  
+INFO  @ Fri, 15 Dec 2017 14:52:34: Processing 1 lines.. 
+INFO  @ Fri, 15 Dec 2017 14:52:34: Loaded 65383 records. 
+INFO  @ Fri, 15 Dec 2017 14:52:34: Loading R template file: /home/yuxinghai/.conda/envs/py27/lib/python2.7/site-packages/mageck/plot_template.RTemplate. 
+INFO  @ Fri, 15 Dec 2017 14:52:34: Loading R template file: /home/yuxinghai/.conda/envs/py27/lib/python2.7/site-packages/mageck/plot_template_indvgene.RTemplate. 
+INFO  @ Fri, 15 Dec 2017 14:52:34: Loading Rnw template file: /home/yuxinghai/.conda/envs/py27/lib/python2.7/site-packages/mageck/plot_template.Rnw. 
+INFO  @ Fri, 15 Dec 2017 14:52:34: Treatment samples:A1 
+INFO  @ Fri, 15 Dec 2017 14:52:34: Treatment sample index:1 
+INFO  @ Fri, 15 Dec 2017 14:52:34: Control samples:NC-A1 
+INFO  @ Fri, 15 Dec 2017 14:52:34: Control sample index:0 
+INFO  @ Fri, 15 Dec 2017 14:52:34: Final size factor: 0.819692468406 1.2820015318 
+INFO  @ Fri, 15 Dec 2017 14:52:35: Writing normalized read counts to /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A1.normalized.txt 
+INFO  @ Fri, 15 Dec 2017 14:52:39: Running command: RRA -i /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A1.plow.txt -o /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A1.gene.low.txt -p 0.5 --skip-gene NA --skip-gene na  
+INFO  @ Fri, 15 Dec 2017 14:52:53: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:52:53:   Welcome to RRA v 0.5.6. 
+INFO  @ Fri, 15 Dec 2017 14:52:53:   Skipping gene NA for permutation ... 
+INFO  @ Fri, 15 Dec 2017 14:52:53:   Skipping gene na for permutation ... 
+INFO  @ Fri, 15 Dec 2017 14:52:53:   Reading input file... 
+INFO  @ Fri, 15 Dec 2017 14:52:53:   Summary: 65383 sgRNAs, 21914 genes, 1 lists; skipped sgRNAs:0 
+INFO  @ Fri, 15 Dec 2017 14:52:53:   Computing lo-values for each group... 
+INFO  @ Fri, 15 Dec 2017 14:52:53:   Computing false discovery rate... 
+INFO  @ Fri, 15 Dec 2017 14:52:53:   Permuting genes with 1 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:52:53:   Permuting genes with 2 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:52:53:   Permuting genes with 3 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:52:53:   Permuting genes with 4 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:52:53:   Permuting genes with 6 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:52:53:   Permuting genes with 8 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:52:53:   Number of genes under FDR adjustment: 21914 
+INFO  @ Fri, 15 Dec 2017 14:52:53:   Saving to output file... 
+INFO  @ Fri, 15 Dec 2017 14:52:53:   RRA completed. 
+INFO  @ Fri, 15 Dec 2017 14:52:53:    
+INFO  @ Fri, 15 Dec 2017 14:52:53: End command message. 
+INFO  @ Fri, 15 Dec 2017 14:52:53: Running command: RRA -i /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A1.phigh.txt -o /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A1.gene.high.txt -p 0.00191181193888 --skip-gene NA --skip-gene na  
+INFO  @ Fri, 15 Dec 2017 14:53:02: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:53:02:   Welcome to RRA v 0.5.6. 
+INFO  @ Fri, 15 Dec 2017 14:53:02:   Skipping gene NA for permutation ... 
+INFO  @ Fri, 15 Dec 2017 14:53:02:   Skipping gene na for permutation ... 
+INFO  @ Fri, 15 Dec 2017 14:53:02:   Reading input file... 
+INFO  @ Fri, 15 Dec 2017 14:53:02:   Summary: 65383 sgRNAs, 21914 genes, 1 lists; skipped sgRNAs:0 
+INFO  @ Fri, 15 Dec 2017 14:53:02:   Computing lo-values for each group... 
+INFO  @ Fri, 15 Dec 2017 14:53:02:   Computing false discovery rate... 
+INFO  @ Fri, 15 Dec 2017 14:53:02:   Permuting genes with 1 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:53:02:   Permuting genes with 2 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:53:02:   Permuting genes with 3 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:53:02:   Permuting genes with 4 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:53:02:   Permuting genes with 6 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:53:02:   Permuting genes with 8 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:53:02:   Number of genes under FDR adjustment: 21914 
+INFO  @ Fri, 15 Dec 2017 14:53:02:   Saving to output file... 
+INFO  @ Fri, 15 Dec 2017 14:53:02:   RRA completed. 
+INFO  @ Fri, 15 Dec 2017 14:53:02:    
+INFO  @ Fri, 15 Dec 2017 14:53:02: End command message. 
+INFO  @ Fri, 15 Dec 2017 14:53:03: Loading top 10 genes from /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A1.gene.low.txt: PLAGL1,DNAJC21,NCKAP1L,GRB2,PCDH11X,hsa-mir-1258,ARF4,RMND5B,NPSR1,AICDA 
+INFO  @ Fri, 15 Dec 2017 14:53:03: Loading top 10 genes from /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A1.gene.high.txt: hsa-mir-6886,LDLR,EMC6,SNAPIN,NPC1,C18orf8,BLOC1S2,SREBF1,COG3,COG4 
+INFO  @ Fri, 15 Dec 2017 14:53:03: Running command: rm /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A1.plow.txt 
+INFO  @ Fri, 15 Dec 2017 14:53:03: Running command: rm /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A1.phigh.txt 
+INFO  @ Fri, 15 Dec 2017 14:53:03: Running command: rm /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A1.gene.low.txt 
+INFO  @ Fri, 15 Dec 2017 14:53:03: Running command: rm /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A1.gene.high.txt 
+INFO  @ Fri, 15 Dec 2017 14:53:03: Running command: cd /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck; Rscript A1.R 
+INFO  @ Fri, 15 Dec 2017 14:53:07: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:53:07:   null device  
+INFO  @ Fri, 15 Dec 2017 14:53:07:             1  
+INFO  @ Fri, 15 Dec 2017 14:53:07:   Writing to file A1_summary.tex 
+INFO  @ Fri, 15 Dec 2017 14:53:07:   Processing code chunks with options ... 
+INFO  @ Fri, 15 Dec 2017 14:53:07:    1 : keep.source term verbatim (label = funcdef, A1_summary.Rnw:27) 
+INFO  @ Fri, 15 Dec 2017 14:53:07:    2 : keep.source term tex (label = tab1, A1_summary.Rnw:37) 
+INFO  @ Fri, 15 Dec 2017 14:53:07:    3 : keep.source term verbatim (A1_summary.Rnw:77) 
+INFO  @ Fri, 15 Dec 2017 14:53:07:    4 : keep.source term verbatim pdf  (A1_summary.Rnw:83) 
+INFO  @ Fri, 15 Dec 2017 14:53:07:    5 : keep.source term verbatim pdf  (A1_summary.Rnw:201) 
+INFO  @ Fri, 15 Dec 2017 14:53:07:    6 : keep.source term verbatim pdf  (A1_summary.Rnw:345) 
+INFO  @ Fri, 15 Dec 2017 14:53:07:    7 : keep.source term verbatim pdf  (A1_summary.Rnw:489) 
+INFO  @ Fri, 15 Dec 2017 14:53:07:    8 : keep.source term verbatim (A1_summary.Rnw:567) 
+INFO  @ Fri, 15 Dec 2017 14:53:07:    9 : keep.source term verbatim pdf  (A1_summary.Rnw:573) 
+INFO  @ Fri, 15 Dec 2017 14:53:07:   10 : keep.source term verbatim pdf  (A1_summary.Rnw:691) 
+INFO  @ Fri, 15 Dec 2017 14:53:07:   11 : keep.source term verbatim pdf  (A1_summary.Rnw:835) 
+INFO  @ Fri, 15 Dec 2017 14:53:07:   12 : keep.source term verbatim pdf  (A1_summary.Rnw:979) 
+INFO  @ Fri, 15 Dec 2017 14:53:07:    
+INFO  @ Fri, 15 Dec 2017 14:53:07:   You can now run (pdf)latex on ‘A1_summary.tex’ 
+INFO  @ Fri, 15 Dec 2017 14:53:07:   Error in texi2dvi("A1_summary.tex", pdf = TRUE) :  
+INFO  @ Fri, 15 Dec 2017 14:53:07:     pdflatex is not available 
+INFO  @ Fri, 15 Dec 2017 14:53:07:   Execution halted 
+INFO  @ Fri, 15 Dec 2017 14:53:07:    
+INFO  @ Fri, 15 Dec 2017 14:53:07: End command message. 
+INFO  @ Fri, 15 Dec 2017 14:53:07: Running command: cd /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck; rm -rf A1_summary-*.pdf 
+INFO  @ Fri, 15 Dec 2017 14:53:07: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:53:07:    
+INFO  @ Fri, 15 Dec 2017 14:53:07: End command message. 
+INFO  @ Fri, 15 Dec 2017 14:53:07: Running command: cd /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck; rm -rf A1_summary.aux 
+INFO  @ Fri, 15 Dec 2017 14:53:07: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:53:07:    
+INFO  @ Fri, 15 Dec 2017 14:53:07: End command message. 
+INFO  @ Fri, 15 Dec 2017 14:53:07: Running command: cd /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck; rm -rf A1_summary.tex 
+INFO  @ Fri, 15 Dec 2017 14:53:07: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:53:07:    
+INFO  @ Fri, 15 Dec 2017 14:53:07: End command message. 
+INFO  @ Fri, 15 Dec 2017 14:53:07: Running command: cd /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck; rm -rf A1_summary.toc 
+INFO  @ Fri, 15 Dec 2017 14:53:07: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:53:07:    
+INFO  @ Fri, 15 Dec 2017 14:53:07: End command message. 
+INFO  @ Fri, 15 Dec 2017 14:53:07: Parameters: /home/yuxinghai/.conda/envs/py27/bin/mageck test -k /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/screen_B1.txt -t B1 -c NC-B1 --norm-method total --normcounts-to-file --sort-criteria pos --adjust-method fdr -n /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B1 --pdf-report 
+INFO  @ Fri, 15 Dec 2017 14:53:07: Welcome to MAGeCK v0.5.6. Command: test 
+INFO  @ Fri, 15 Dec 2017 14:53:07: Loading count table from /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/screen_B1.txt  
+INFO  @ Fri, 15 Dec 2017 14:53:07: Processing 1 lines.. 
+INFO  @ Fri, 15 Dec 2017 14:53:07: Loaded 58028 records. 
+INFO  @ Fri, 15 Dec 2017 14:53:07: Loading R template file: /home/yuxinghai/.conda/envs/py27/lib/python2.7/site-packages/mageck/plot_template.RTemplate. 
+INFO  @ Fri, 15 Dec 2017 14:53:07: Loading R template file: /home/yuxinghai/.conda/envs/py27/lib/python2.7/site-packages/mageck/plot_template_indvgene.RTemplate. 
+INFO  @ Fri, 15 Dec 2017 14:53:07: Loading Rnw template file: /home/yuxinghai/.conda/envs/py27/lib/python2.7/site-packages/mageck/plot_template.Rnw. 
+INFO  @ Fri, 15 Dec 2017 14:53:07: Treatment samples:B1 
+INFO  @ Fri, 15 Dec 2017 14:53:07: Treatment sample index:1 
+INFO  @ Fri, 15 Dec 2017 14:53:07: Control samples:NC-B1 
+INFO  @ Fri, 15 Dec 2017 14:53:07: Control sample index:0 
+INFO  @ Fri, 15 Dec 2017 14:53:07: Final size factor: 1.09503902394 0.920140511703 
+INFO  @ Fri, 15 Dec 2017 14:53:07: Writing normalized read counts to /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B1.normalized.txt 
+INFO  @ Fri, 15 Dec 2017 14:53:11: Running command: RRA -i /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B1.plow.txt -o /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B1.gene.low.txt -p 0.5 --skip-gene NA --skip-gene na  
+INFO  @ Fri, 15 Dec 2017 14:53:16: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:53:16:   Welcome to RRA v 0.5.6. 
+INFO  @ Fri, 15 Dec 2017 14:53:16:   Skipping gene NA for permutation ... 
+INFO  @ Fri, 15 Dec 2017 14:53:16:   Skipping gene na for permutation ... 
+INFO  @ Fri, 15 Dec 2017 14:53:16:   Reading input file... 
+INFO  @ Fri, 15 Dec 2017 14:53:16:   Summary: 58028 sgRNAs, 20049 genes, 1 lists; skipped sgRNAs:0 
+INFO  @ Fri, 15 Dec 2017 14:53:16:   Computing lo-values for each group... 
+INFO  @ Fri, 15 Dec 2017 14:53:16:   Computing false discovery rate... 
+INFO  @ Fri, 15 Dec 2017 14:53:16:   Permuting genes with 1 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:53:16:   Permuting genes with 2 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:53:16:   Permuting genes with 3 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:53:16:   Number of genes under FDR adjustment: 20049 
+INFO  @ Fri, 15 Dec 2017 14:53:16:   Saving to output file... 
+INFO  @ Fri, 15 Dec 2017 14:53:16:   RRA completed. 
+INFO  @ Fri, 15 Dec 2017 14:53:16:    
+INFO  @ Fri, 15 Dec 2017 14:53:16: End command message. 
+INFO  @ Fri, 15 Dec 2017 14:53:16: Running command: RRA -i /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B1.phigh.txt -o /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B1.gene.high.txt -p 0.00222306472737 --skip-gene NA --skip-gene na  
+INFO  @ Fri, 15 Dec 2017 14:53:20: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:53:20:   Welcome to RRA v 0.5.6. 
+INFO  @ Fri, 15 Dec 2017 14:53:20:   Skipping gene NA for permutation ... 
+INFO  @ Fri, 15 Dec 2017 14:53:20:   Skipping gene na for permutation ... 
+INFO  @ Fri, 15 Dec 2017 14:53:20:   Reading input file... 
+INFO  @ Fri, 15 Dec 2017 14:53:20:   Summary: 58028 sgRNAs, 20049 genes, 1 lists; skipped sgRNAs:0 
+INFO  @ Fri, 15 Dec 2017 14:53:20:   Computing lo-values for each group... 
+INFO  @ Fri, 15 Dec 2017 14:53:20:   Computing false discovery rate... 
+INFO  @ Fri, 15 Dec 2017 14:53:20:   Permuting genes with 1 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:53:20:   Permuting genes with 2 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:53:20:   Permuting genes with 3 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:53:20:   Number of genes under FDR adjustment: 20049 
+INFO  @ Fri, 15 Dec 2017 14:53:20:   Saving to output file... 
+INFO  @ Fri, 15 Dec 2017 14:53:20:   RRA completed. 
+INFO  @ Fri, 15 Dec 2017 14:53:20:    
+INFO  @ Fri, 15 Dec 2017 14:53:20: End command message. 
+INFO  @ Fri, 15 Dec 2017 14:53:20: Loading top 10 genes from /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B1.gene.low.txt: CPD,CYP2A13,OR5B21,42253,PTPN1,SLC25A11,ZBTB43,ZNF345,SMG1,KLHL21 
+INFO  @ Fri, 15 Dec 2017 14:53:20: Loading top 10 genes from /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B1.gene.high.txt: EMC6,COG7,LDLR,SCAP,COG2,SREBF1,COG5,EMC4,MEF2BNB,MBTPS2 
+INFO  @ Fri, 15 Dec 2017 14:53:21: Running command: rm /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B1.plow.txt 
+INFO  @ Fri, 15 Dec 2017 14:53:21: Running command: rm /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B1.phigh.txt 
+INFO  @ Fri, 15 Dec 2017 14:53:21: Running command: rm /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B1.gene.low.txt 
+INFO  @ Fri, 15 Dec 2017 14:53:21: Running command: rm /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B1.gene.high.txt 
+INFO  @ Fri, 15 Dec 2017 14:53:21: Running command: cd /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck; Rscript B1.R 
+INFO  @ Fri, 15 Dec 2017 14:53:24: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:53:24:   null device  
+INFO  @ Fri, 15 Dec 2017 14:53:24:             1  
+INFO  @ Fri, 15 Dec 2017 14:53:24:   Writing to file B1_summary.tex 
+INFO  @ Fri, 15 Dec 2017 14:53:24:   Processing code chunks with options ... 
+INFO  @ Fri, 15 Dec 2017 14:53:24:    1 : keep.source term verbatim (label = funcdef, B1_summary.Rnw:27) 
+INFO  @ Fri, 15 Dec 2017 14:53:24:    2 : keep.source term tex (label = tab1, B1_summary.Rnw:37) 
+INFO  @ Fri, 15 Dec 2017 14:53:24:    3 : keep.source term verbatim (B1_summary.Rnw:77) 
+INFO  @ Fri, 15 Dec 2017 14:53:24:    4 : keep.source term verbatim pdf  (B1_summary.Rnw:83) 
+INFO  @ Fri, 15 Dec 2017 14:53:24:    5 : keep.source term verbatim pdf  (B1_summary.Rnw:201) 
+INFO  @ Fri, 15 Dec 2017 14:53:24:    6 : keep.source term verbatim pdf  (B1_summary.Rnw:345) 
+INFO  @ Fri, 15 Dec 2017 14:53:24:    7 : keep.source term verbatim pdf  (B1_summary.Rnw:489) 
+INFO  @ Fri, 15 Dec 2017 14:53:24:    8 : keep.source term verbatim (B1_summary.Rnw:567) 
+INFO  @ Fri, 15 Dec 2017 14:53:24:    9 : keep.source term verbatim pdf  (B1_summary.Rnw:573) 
+INFO  @ Fri, 15 Dec 2017 14:53:24:   10 : keep.source term verbatim pdf  (B1_summary.Rnw:691) 
+INFO  @ Fri, 15 Dec 2017 14:53:24:   11 : keep.source term verbatim pdf  (B1_summary.Rnw:835) 
+INFO  @ Fri, 15 Dec 2017 14:53:24:   12 : keep.source term verbatim pdf  (B1_summary.Rnw:979) 
+INFO  @ Fri, 15 Dec 2017 14:53:24:    
+INFO  @ Fri, 15 Dec 2017 14:53:24:   You can now run (pdf)latex on ‘B1_summary.tex’ 
+INFO  @ Fri, 15 Dec 2017 14:53:24:   Error in texi2dvi("B1_summary.tex", pdf = TRUE) :  
+INFO  @ Fri, 15 Dec 2017 14:53:24:     pdflatex is not available 
+INFO  @ Fri, 15 Dec 2017 14:53:24:   Execution halted 
+INFO  @ Fri, 15 Dec 2017 14:53:24:    
+INFO  @ Fri, 15 Dec 2017 14:53:24: End command message. 
+INFO  @ Fri, 15 Dec 2017 14:53:24: Running command: cd /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck; rm -rf B1_summary-*.pdf 
+INFO  @ Fri, 15 Dec 2017 14:53:24: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:53:24:    
+INFO  @ Fri, 15 Dec 2017 14:53:24: End command message. 
+INFO  @ Fri, 15 Dec 2017 14:53:24: Running command: cd /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck; rm -rf B1_summary.aux 
+INFO  @ Fri, 15 Dec 2017 14:53:24: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:53:24:    
+INFO  @ Fri, 15 Dec 2017 14:53:24: End command message. 
+INFO  @ Fri, 15 Dec 2017 14:53:24: Running command: cd /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck; rm -rf B1_summary.tex 
+INFO  @ Fri, 15 Dec 2017 14:53:24: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:53:24:    
+INFO  @ Fri, 15 Dec 2017 14:53:24: End command message. 
+INFO  @ Fri, 15 Dec 2017 14:53:24: Running command: cd /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck; rm -rf B1_summary.toc 
+INFO  @ Fri, 15 Dec 2017 14:53:24: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:53:24:    
+INFO  @ Fri, 15 Dec 2017 14:53:24: End command message. 
+INFO  @ Fri, 15 Dec 2017 14:53:24: Parameters: /home/yuxinghai/.conda/envs/py27/bin/mageck test -k /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/screen_A2.txt -t A2 -c NC-A1 --norm-method total --normcounts-to-file --sort-criteria pos --adjust-method fdr -n /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A2 --pdf-report 
+INFO  @ Fri, 15 Dec 2017 14:53:24: Welcome to MAGeCK v0.5.6. Command: test 
+INFO  @ Fri, 15 Dec 2017 14:53:24: Loading count table from /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/screen_A2.txt  
+INFO  @ Fri, 15 Dec 2017 14:53:24: Processing 1 lines.. 
+INFO  @ Fri, 15 Dec 2017 14:53:25: Loaded 65383 records. 
+INFO  @ Fri, 15 Dec 2017 14:53:25: Loading R template file: /home/yuxinghai/.conda/envs/py27/lib/python2.7/site-packages/mageck/plot_template.RTemplate. 
+INFO  @ Fri, 15 Dec 2017 14:53:25: Loading R template file: /home/yuxinghai/.conda/envs/py27/lib/python2.7/site-packages/mageck/plot_template_indvgene.RTemplate. 
+INFO  @ Fri, 15 Dec 2017 14:53:25: Loading Rnw template file: /home/yuxinghai/.conda/envs/py27/lib/python2.7/site-packages/mageck/plot_template.Rnw. 
+INFO  @ Fri, 15 Dec 2017 14:53:25: Treatment samples:A2 
+INFO  @ Fri, 15 Dec 2017 14:53:25: Treatment sample index:1 
+INFO  @ Fri, 15 Dec 2017 14:53:25: Control samples:NC-A1 
+INFO  @ Fri, 15 Dec 2017 14:53:25: Control sample index:0 
+INFO  @ Fri, 15 Dec 2017 14:53:25: Final size factor: 0.872046001658 1.17195991594 
+INFO  @ Fri, 15 Dec 2017 14:53:25: Writing normalized read counts to /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A2.normalized.txt 
+INFO  @ Fri, 15 Dec 2017 14:53:29: Running command: RRA -i /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A2.plow.txt -o /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A2.gene.low.txt -p 0.5 --skip-gene NA --skip-gene na  
+INFO  @ Fri, 15 Dec 2017 14:53:44: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:53:44:   Welcome to RRA v 0.5.6. 
+INFO  @ Fri, 15 Dec 2017 14:53:44:   Skipping gene NA for permutation ... 
+INFO  @ Fri, 15 Dec 2017 14:53:44:   Skipping gene na for permutation ... 
+INFO  @ Fri, 15 Dec 2017 14:53:44:   Reading input file... 
+INFO  @ Fri, 15 Dec 2017 14:53:44:   Summary: 65383 sgRNAs, 21914 genes, 1 lists; skipped sgRNAs:0 
+INFO  @ Fri, 15 Dec 2017 14:53:44:   Computing lo-values for each group... 
+INFO  @ Fri, 15 Dec 2017 14:53:44:   Computing false discovery rate... 
+INFO  @ Fri, 15 Dec 2017 14:53:44:   Permuting genes with 1 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:53:44:   Permuting genes with 2 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:53:44:   Permuting genes with 3 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:53:44:   Permuting genes with 4 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:53:44:   Permuting genes with 6 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:53:44:   Permuting genes with 8 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:53:44:   Number of genes under FDR adjustment: 21914 
+INFO  @ Fri, 15 Dec 2017 14:53:44:   Saving to output file... 
+INFO  @ Fri, 15 Dec 2017 14:53:44:   RRA completed. 
+INFO  @ Fri, 15 Dec 2017 14:53:44:    
+INFO  @ Fri, 15 Dec 2017 14:53:44: End command message. 
+INFO  @ Fri, 15 Dec 2017 14:53:44: Running command: RRA -i /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A2.phigh.txt -o /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A2.gene.high.txt -p 0.000932964226175 --skip-gene NA --skip-gene na  
+INFO  @ Fri, 15 Dec 2017 14:53:53: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:53:53:   Welcome to RRA v 0.5.6. 
+INFO  @ Fri, 15 Dec 2017 14:53:53:   Skipping gene NA for permutation ... 
+INFO  @ Fri, 15 Dec 2017 14:53:53:   Skipping gene na for permutation ... 
+INFO  @ Fri, 15 Dec 2017 14:53:53:   Reading input file... 
+INFO  @ Fri, 15 Dec 2017 14:53:53:   Summary: 65383 sgRNAs, 21914 genes, 1 lists; skipped sgRNAs:0 
+INFO  @ Fri, 15 Dec 2017 14:53:53:   Computing lo-values for each group... 
+INFO  @ Fri, 15 Dec 2017 14:53:53:   Computing false discovery rate... 
+INFO  @ Fri, 15 Dec 2017 14:53:53:   Permuting genes with 1 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:53:53:   Permuting genes with 2 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:53:53:   Permuting genes with 3 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:53:53:   Permuting genes with 4 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:53:53:   Permuting genes with 6 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:53:53:   Permuting genes with 8 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:53:53:   Number of genes under FDR adjustment: 21914 
+INFO  @ Fri, 15 Dec 2017 14:53:53:   Saving to output file... 
+INFO  @ Fri, 15 Dec 2017 14:53:53:   RRA completed. 
+INFO  @ Fri, 15 Dec 2017 14:53:53:    
+INFO  @ Fri, 15 Dec 2017 14:53:53: End command message. 
+INFO  @ Fri, 15 Dec 2017 14:53:53: Loading top 10 genes from /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A2.gene.low.txt: hsa-mir-346,hsa-mir-3153,CDKN1A,hsa-mir-3154,LRRC10B,hsa-mir-6716,hsa-mir-483,HTRA2,hsa-mir-877,DHRS4 
+INFO  @ Fri, 15 Dec 2017 14:53:54: Loading top 10 genes from /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A2.gene.high.txt: NPC1,EMC6,VPS54,SNAPIN,VPS51,NPC2,MMGT1,BLOC1S2,SPNS1,CES5A 
+INFO  @ Fri, 15 Dec 2017 14:53:54: Running command: rm /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A2.plow.txt 
+INFO  @ Fri, 15 Dec 2017 14:53:54: Running command: rm /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A2.phigh.txt 
+INFO  @ Fri, 15 Dec 2017 14:53:54: Running command: rm /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A2.gene.low.txt 
+INFO  @ Fri, 15 Dec 2017 14:53:54: Running command: rm /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A2.gene.high.txt 
+INFO  @ Fri, 15 Dec 2017 14:53:54: Running command: cd /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck; Rscript A2.R 
+INFO  @ Fri, 15 Dec 2017 14:53:57: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:53:57:   null device  
+INFO  @ Fri, 15 Dec 2017 14:53:57:             1  
+INFO  @ Fri, 15 Dec 2017 14:53:57:   Writing to file A2_summary.tex 
+INFO  @ Fri, 15 Dec 2017 14:53:57:   Processing code chunks with options ... 
+INFO  @ Fri, 15 Dec 2017 14:53:57:    1 : keep.source term verbatim (label = funcdef, A2_summary.Rnw:27) 
+INFO  @ Fri, 15 Dec 2017 14:53:57:    2 : keep.source term tex (label = tab1, A2_summary.Rnw:37) 
+INFO  @ Fri, 15 Dec 2017 14:53:57:    3 : keep.source term verbatim (A2_summary.Rnw:77) 
+INFO  @ Fri, 15 Dec 2017 14:53:57:    4 : keep.source term verbatim pdf  (A2_summary.Rnw:83) 
+INFO  @ Fri, 15 Dec 2017 14:53:57:    5 : keep.source term verbatim pdf  (A2_summary.Rnw:201) 
+INFO  @ Fri, 15 Dec 2017 14:53:57:    6 : keep.source term verbatim pdf  (A2_summary.Rnw:345) 
+INFO  @ Fri, 15 Dec 2017 14:53:57:    7 : keep.source term verbatim pdf  (A2_summary.Rnw:489) 
+INFO  @ Fri, 15 Dec 2017 14:53:57:    8 : keep.source term verbatim (A2_summary.Rnw:567) 
+INFO  @ Fri, 15 Dec 2017 14:53:57:    9 : keep.source term verbatim pdf  (A2_summary.Rnw:573) 
+INFO  @ Fri, 15 Dec 2017 14:53:57:   10 : keep.source term verbatim pdf  (A2_summary.Rnw:691) 
+INFO  @ Fri, 15 Dec 2017 14:53:57:   11 : keep.source term verbatim pdf  (A2_summary.Rnw:835) 
+INFO  @ Fri, 15 Dec 2017 14:53:57:   12 : keep.source term verbatim pdf  (A2_summary.Rnw:979) 
+INFO  @ Fri, 15 Dec 2017 14:53:57:    
+INFO  @ Fri, 15 Dec 2017 14:53:57:   You can now run (pdf)latex on ‘A2_summary.tex’ 
+INFO  @ Fri, 15 Dec 2017 14:53:57:   Error in texi2dvi("A2_summary.tex", pdf = TRUE) :  
+INFO  @ Fri, 15 Dec 2017 14:53:57:     pdflatex is not available 
+INFO  @ Fri, 15 Dec 2017 14:53:57:   Execution halted 
+INFO  @ Fri, 15 Dec 2017 14:53:57:    
+INFO  @ Fri, 15 Dec 2017 14:53:57: End command message. 
+INFO  @ Fri, 15 Dec 2017 14:53:57: Running command: cd /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck; rm -rf A2_summary-*.pdf 
+INFO  @ Fri, 15 Dec 2017 14:53:57: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:53:57:    
+INFO  @ Fri, 15 Dec 2017 14:53:57: End command message. 
+INFO  @ Fri, 15 Dec 2017 14:53:57: Running command: cd /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck; rm -rf A2_summary.aux 
+INFO  @ Fri, 15 Dec 2017 14:53:57: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:53:57:    
+INFO  @ Fri, 15 Dec 2017 14:53:57: End command message. 
+INFO  @ Fri, 15 Dec 2017 14:53:57: Running command: cd /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck; rm -rf A2_summary.tex 
+INFO  @ Fri, 15 Dec 2017 14:53:57: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:53:57:    
+INFO  @ Fri, 15 Dec 2017 14:53:57: End command message. 
+INFO  @ Fri, 15 Dec 2017 14:53:57: Running command: cd /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck; rm -rf A2_summary.toc 
+INFO  @ Fri, 15 Dec 2017 14:53:57: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:53:57:    
+INFO  @ Fri, 15 Dec 2017 14:53:57: End command message. 
+INFO  @ Fri, 15 Dec 2017 14:53:58: Parameters: /home/yuxinghai/.conda/envs/py27/bin/mageck test -k /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/screen_B2.txt -t B2 -c NC-B1 --norm-method total --normcounts-to-file --sort-criteria pos --adjust-method fdr -n /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B2 --pdf-report 
+INFO  @ Fri, 15 Dec 2017 14:53:58: Welcome to MAGeCK v0.5.6. Command: test 
+INFO  @ Fri, 15 Dec 2017 14:53:58: Loading count table from /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/screen_B2.txt  
+INFO  @ Fri, 15 Dec 2017 14:53:58: Processing 1 lines.. 
+INFO  @ Fri, 15 Dec 2017 14:53:58: Loaded 58028 records. 
+INFO  @ Fri, 15 Dec 2017 14:53:58: Loading R template file: /home/yuxinghai/.conda/envs/py27/lib/python2.7/site-packages/mageck/plot_template.RTemplate. 
+INFO  @ Fri, 15 Dec 2017 14:53:58: Loading R template file: /home/yuxinghai/.conda/envs/py27/lib/python2.7/site-packages/mageck/plot_template_indvgene.RTemplate. 
+INFO  @ Fri, 15 Dec 2017 14:53:58: Loading Rnw template file: /home/yuxinghai/.conda/envs/py27/lib/python2.7/site-packages/mageck/plot_template.Rnw. 
+INFO  @ Fri, 15 Dec 2017 14:53:58: Treatment samples:B2 
+INFO  @ Fri, 15 Dec 2017 14:53:58: Treatment sample index:1 
+INFO  @ Fri, 15 Dec 2017 14:53:58: Control samples:NC-B1 
+INFO  @ Fri, 15 Dec 2017 14:53:58: Control sample index:0 
+INFO  @ Fri, 15 Dec 2017 14:53:58: Final size factor: 1.12972120479 0.897001082537 
+INFO  @ Fri, 15 Dec 2017 14:53:58: Writing normalized read counts to /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B2.normalized.txt 
+INFO  @ Fri, 15 Dec 2017 14:54:01: Running command: RRA -i /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B2.plow.txt -o /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B2.gene.low.txt -p 0.5 --skip-gene NA --skip-gene na  
+INFO  @ Fri, 15 Dec 2017 14:54:07: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:54:07:   Welcome to RRA v 0.5.6. 
+INFO  @ Fri, 15 Dec 2017 14:54:07:   Skipping gene NA for permutation ... 
+INFO  @ Fri, 15 Dec 2017 14:54:07:   Skipping gene na for permutation ... 
+INFO  @ Fri, 15 Dec 2017 14:54:07:   Reading input file... 
+INFO  @ Fri, 15 Dec 2017 14:54:07:   Summary: 58028 sgRNAs, 20049 genes, 1 lists; skipped sgRNAs:0 
+INFO  @ Fri, 15 Dec 2017 14:54:07:   Computing lo-values for each group... 
+INFO  @ Fri, 15 Dec 2017 14:54:07:   Computing false discovery rate... 
+INFO  @ Fri, 15 Dec 2017 14:54:07:   Permuting genes with 1 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:54:07:   Permuting genes with 2 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:54:07:   Permuting genes with 3 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:54:07:   Number of genes under FDR adjustment: 20049 
+INFO  @ Fri, 15 Dec 2017 14:54:07:   Saving to output file... 
+INFO  @ Fri, 15 Dec 2017 14:54:07:   RRA completed. 
+INFO  @ Fri, 15 Dec 2017 14:54:07:    
+INFO  @ Fri, 15 Dec 2017 14:54:07: End command message. 
+INFO  @ Fri, 15 Dec 2017 14:54:07: Running command: RRA -i /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B2.phigh.txt -o /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B2.gene.high.txt -p 0.00141311091197 --skip-gene NA --skip-gene na  
+INFO  @ Fri, 15 Dec 2017 14:54:11: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:54:11:   Welcome to RRA v 0.5.6. 
+INFO  @ Fri, 15 Dec 2017 14:54:11:   Skipping gene NA for permutation ... 
+INFO  @ Fri, 15 Dec 2017 14:54:11:   Skipping gene na for permutation ... 
+INFO  @ Fri, 15 Dec 2017 14:54:11:   Reading input file... 
+INFO  @ Fri, 15 Dec 2017 14:54:11:   Summary: 58028 sgRNAs, 20049 genes, 1 lists; skipped sgRNAs:0 
+INFO  @ Fri, 15 Dec 2017 14:54:11:   Computing lo-values for each group... 
+INFO  @ Fri, 15 Dec 2017 14:54:11:   Computing false discovery rate... 
+INFO  @ Fri, 15 Dec 2017 14:54:11:   Permuting genes with 1 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:54:11:   Permuting genes with 2 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:54:11:   Permuting genes with 3 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:54:11:   Number of genes under FDR adjustment: 20049 
+INFO  @ Fri, 15 Dec 2017 14:54:11:   Saving to output file... 
+INFO  @ Fri, 15 Dec 2017 14:54:11:   RRA completed. 
+INFO  @ Fri, 15 Dec 2017 14:54:11:    
+INFO  @ Fri, 15 Dec 2017 14:54:11: End command message. 
+INFO  @ Fri, 15 Dec 2017 14:54:11: Loading top 10 genes from /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B2.gene.low.txt: OR13C3,LCE1B,OR10A6,OR4D6,CC2D2A,DDX10,GATA6,PPIL4,PGAM1,MYH3 
+INFO  @ Fri, 15 Dec 2017 14:54:11: Loading top 10 genes from /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B2.gene.high.txt: NPC1,EMC4,GNPTAB,VPS51,VPS54,ATP6V1G1,ATP6AP1,BLOC1S2,UVRAG,ATP6AP2 
+INFO  @ Fri, 15 Dec 2017 14:54:11: Running command: rm /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B2.plow.txt 
+INFO  @ Fri, 15 Dec 2017 14:54:12: Running command: rm /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B2.phigh.txt 
+INFO  @ Fri, 15 Dec 2017 14:54:12: Running command: rm /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B2.gene.low.txt 
+INFO  @ Fri, 15 Dec 2017 14:54:12: Running command: rm /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/B2.gene.high.txt 
+INFO  @ Fri, 15 Dec 2017 14:54:12: Running command: cd /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck; Rscript B2.R 
+INFO  @ Fri, 15 Dec 2017 14:54:15: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:54:15:   null device  
+INFO  @ Fri, 15 Dec 2017 14:54:15:             1  
+INFO  @ Fri, 15 Dec 2017 14:54:15:   Writing to file B2_summary.tex 
+INFO  @ Fri, 15 Dec 2017 14:54:15:   Processing code chunks with options ... 
+INFO  @ Fri, 15 Dec 2017 14:54:15:    1 : keep.source term verbatim (label = funcdef, B2_summary.Rnw:27) 
+INFO  @ Fri, 15 Dec 2017 14:54:15:    2 : keep.source term tex (label = tab1, B2_summary.Rnw:37) 
+INFO  @ Fri, 15 Dec 2017 14:54:15:    3 : keep.source term verbatim (B2_summary.Rnw:77) 
+INFO  @ Fri, 15 Dec 2017 14:54:15:    4 : keep.source term verbatim pdf  (B2_summary.Rnw:83) 
+INFO  @ Fri, 15 Dec 2017 14:54:15:    5 : keep.source term verbatim pdf  (B2_summary.Rnw:201) 
+INFO  @ Fri, 15 Dec 2017 14:54:15:    6 : keep.source term verbatim pdf  (B2_summary.Rnw:345) 
+INFO  @ Fri, 15 Dec 2017 14:54:15:    7 : keep.source term verbatim pdf  (B2_summary.Rnw:489) 
+INFO  @ Fri, 15 Dec 2017 14:54:15:    8 : keep.source term verbatim (B2_summary.Rnw:567) 
+INFO  @ Fri, 15 Dec 2017 14:54:15:    9 : keep.source term verbatim pdf  (B2_summary.Rnw:573) 
+INFO  @ Fri, 15 Dec 2017 14:54:15:   10 : keep.source term verbatim pdf  (B2_summary.Rnw:691) 
+INFO  @ Fri, 15 Dec 2017 14:54:15:   11 : keep.source term verbatim pdf  (B2_summary.Rnw:835) 
+INFO  @ Fri, 15 Dec 2017 14:54:15:   12 : keep.source term verbatim pdf  (B2_summary.Rnw:979) 
+INFO  @ Fri, 15 Dec 2017 14:54:15:    
+INFO  @ Fri, 15 Dec 2017 14:54:15:   You can now run (pdf)latex on ‘B2_summary.tex’ 
+INFO  @ Fri, 15 Dec 2017 14:54:15:   Error in texi2dvi("B2_summary.tex", pdf = TRUE) :  
+INFO  @ Fri, 15 Dec 2017 14:54:15:     pdflatex is not available 
+INFO  @ Fri, 15 Dec 2017 14:54:15:   Execution halted 
+INFO  @ Fri, 15 Dec 2017 14:54:15:    
+INFO  @ Fri, 15 Dec 2017 14:54:15: End command message. 
+INFO  @ Fri, 15 Dec 2017 14:54:15: Running command: cd /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck; rm -rf B2_summary-*.pdf 
+INFO  @ Fri, 15 Dec 2017 14:54:15: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:54:15:    
+INFO  @ Fri, 15 Dec 2017 14:54:15: End command message. 
+INFO  @ Fri, 15 Dec 2017 14:54:15: Running command: cd /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck; rm -rf B2_summary.aux 
+INFO  @ Fri, 15 Dec 2017 14:54:15: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:54:15:    
+INFO  @ Fri, 15 Dec 2017 14:54:15: End command message. 
+INFO  @ Fri, 15 Dec 2017 14:54:15: Running command: cd /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck; rm -rf B2_summary.tex 
+INFO  @ Fri, 15 Dec 2017 14:54:15: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:54:15:    
+INFO  @ Fri, 15 Dec 2017 14:54:15: End command message. 
+INFO  @ Fri, 15 Dec 2017 14:54:15: Running command: cd /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck; rm -rf B2_summary.toc 
+INFO  @ Fri, 15 Dec 2017 14:54:15: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:54:15:    
+INFO  @ Fri, 15 Dec 2017 14:54:15: End command message. 
+INFO  @ Fri, 15 Dec 2017 14:54:15: Parameters: /home/yuxinghai/.conda/envs/py27/bin/mageck test -k /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/screen_A3.txt -t A3 -c NC-A1 --norm-method total --normcounts-to-file --sort-criteria pos --adjust-method fdr -n /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A3 --pdf-report 
+INFO  @ Fri, 15 Dec 2017 14:54:15: Welcome to MAGeCK v0.5.6. Command: test 
+INFO  @ Fri, 15 Dec 2017 14:54:15: Loading count table from /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/screen_A3.txt  
+INFO  @ Fri, 15 Dec 2017 14:54:15: Processing 1 lines.. 
+INFO  @ Fri, 15 Dec 2017 14:54:15: Loaded 65383 records. 
+INFO  @ Fri, 15 Dec 2017 14:54:15: Loading R template file: /home/yuxinghai/.conda/envs/py27/lib/python2.7/site-packages/mageck/plot_template.RTemplate. 
+INFO  @ Fri, 15 Dec 2017 14:54:15: Loading R template file: /home/yuxinghai/.conda/envs/py27/lib/python2.7/site-packages/mageck/plot_template_indvgene.RTemplate. 
+INFO  @ Fri, 15 Dec 2017 14:54:15: Loading Rnw template file: /home/yuxinghai/.conda/envs/py27/lib/python2.7/site-packages/mageck/plot_template.Rnw. 
+INFO  @ Fri, 15 Dec 2017 14:54:15: Treatment samples:A3 
+INFO  @ Fri, 15 Dec 2017 14:54:15: Treatment sample index:1 
+INFO  @ Fri, 15 Dec 2017 14:54:15: Control samples:NC-A1 
+INFO  @ Fri, 15 Dec 2017 14:54:15: Control sample index:0 
+INFO  @ Fri, 15 Dec 2017 14:54:15: Final size factor: 0.861247907752 1.1920455306 
+INFO  @ Fri, 15 Dec 2017 14:54:16: Writing normalized read counts to /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A3.normalized.txt 
+INFO  @ Fri, 15 Dec 2017 14:54:19: Running command: RRA -i /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A3.plow.txt -o /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A3.gene.low.txt -p 0.5 --skip-gene NA --skip-gene na  
+INFO  @ Fri, 15 Dec 2017 14:54:34: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:54:34:   Welcome to RRA v 0.5.6. 
+INFO  @ Fri, 15 Dec 2017 14:54:34:   Skipping gene NA for permutation ... 
+INFO  @ Fri, 15 Dec 2017 14:54:34:   Skipping gene na for permutation ... 
+INFO  @ Fri, 15 Dec 2017 14:54:34:   Reading input file... 
+INFO  @ Fri, 15 Dec 2017 14:54:34:   Summary: 65383 sgRNAs, 21914 genes, 1 lists; skipped sgRNAs:0 
+INFO  @ Fri, 15 Dec 2017 14:54:34:   Computing lo-values for each group... 
+INFO  @ Fri, 15 Dec 2017 14:54:34:   Computing false discovery rate... 
+INFO  @ Fri, 15 Dec 2017 14:54:34:   Permuting genes with 1 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:54:34:   Permuting genes with 2 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:54:34:   Permuting genes with 3 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:54:34:   Permuting genes with 4 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:54:34:   Permuting genes with 6 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:54:34:   Permuting genes with 8 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:54:34:   Number of genes under FDR adjustment: 21914 
+INFO  @ Fri, 15 Dec 2017 14:54:34:   Saving to output file... 
+INFO  @ Fri, 15 Dec 2017 14:54:34:   RRA completed. 
+INFO  @ Fri, 15 Dec 2017 14:54:34:    
+INFO  @ Fri, 15 Dec 2017 14:54:34: End command message. 
+INFO  @ Fri, 15 Dec 2017 14:54:34: Running command: RRA -i /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A3.phigh.txt -o /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A3.gene.high.txt -p 0.00182004496582 --skip-gene NA --skip-gene na  
+INFO  @ Fri, 15 Dec 2017 14:54:43: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:54:43:   Welcome to RRA v 0.5.6. 
+INFO  @ Fri, 15 Dec 2017 14:54:43:   Skipping gene NA for permutation ... 
+INFO  @ Fri, 15 Dec 2017 14:54:43:   Skipping gene na for permutation ... 
+INFO  @ Fri, 15 Dec 2017 14:54:43:   Reading input file... 
+INFO  @ Fri, 15 Dec 2017 14:54:43:   Summary: 65383 sgRNAs, 21914 genes, 1 lists; skipped sgRNAs:0 
+INFO  @ Fri, 15 Dec 2017 14:54:43:   Computing lo-values for each group... 
+INFO  @ Fri, 15 Dec 2017 14:54:43:   Computing false discovery rate... 
+INFO  @ Fri, 15 Dec 2017 14:54:43:   Permuting genes with 1 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:54:43:   Permuting genes with 2 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:54:43:   Permuting genes with 3 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:54:43:   Permuting genes with 4 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:54:43:   Permuting genes with 6 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:54:43:   Permuting genes with 8 sgRNAs... 
+INFO  @ Fri, 15 Dec 2017 14:54:43:   Number of genes under FDR adjustment: 21914 
+INFO  @ Fri, 15 Dec 2017 14:54:43:   Saving to output file... 
+INFO  @ Fri, 15 Dec 2017 14:54:43:   RRA completed. 
+INFO  @ Fri, 15 Dec 2017 14:54:43:    
+INFO  @ Fri, 15 Dec 2017 14:54:43: End command message. 
+INFO  @ Fri, 15 Dec 2017 14:54:44: Loading top 10 genes from /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A3.gene.low.txt: hsa-mir-3153,hsa-mir-346,LCE3D,MBD3L2,CHST7,RAB25,DHRS4,hsa-mir-511,BRD3,hsa-mir-6716 
+INFO  @ Fri, 15 Dec 2017 14:54:44: Loading top 10 genes from /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A3.gene.high.txt: SNAPIN,NPC1,BLOC1S2,SPNS1,WDR91,EMC6,C18orf8,NPC2,VPS51,VPS39 
+INFO  @ Fri, 15 Dec 2017 14:54:44: Running command: rm /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A3.plow.txt 
+INFO  @ Fri, 15 Dec 2017 14:54:44: Running command: rm /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A3.phigh.txt 
+INFO  @ Fri, 15 Dec 2017 14:54:44: Running command: rm /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A3.gene.low.txt 
+INFO  @ Fri, 15 Dec 2017 14:54:44: Running command: rm /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck/A3.gene.high.txt 
+INFO  @ Fri, 15 Dec 2017 14:54:44: Running command: cd /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck; Rscript A3.R 
+INFO  @ Fri, 15 Dec 2017 14:54:47: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:54:47:   null device  
+INFO  @ Fri, 15 Dec 2017 14:54:47:             1  
+INFO  @ Fri, 15 Dec 2017 14:54:47:   Writing to file A3_summary.tex 
+INFO  @ Fri, 15 Dec 2017 14:54:47:   Processing code chunks with options ... 
+INFO  @ Fri, 15 Dec 2017 14:54:47:    1 : keep.source term verbatim (label = funcdef, A3_summary.Rnw:27) 
+INFO  @ Fri, 15 Dec 2017 14:54:47:    2 : keep.source term tex (label = tab1, A3_summary.Rnw:37) 
+INFO  @ Fri, 15 Dec 2017 14:54:47:    3 : keep.source term verbatim (A3_summary.Rnw:77) 
+INFO  @ Fri, 15 Dec 2017 14:54:47:    4 : keep.source term verbatim pdf  (A3_summary.Rnw:83) 
+INFO  @ Fri, 15 Dec 2017 14:54:47:    5 : keep.source term verbatim pdf  (A3_summary.Rnw:201) 
+INFO  @ Fri, 15 Dec 2017 14:54:47:    6 : keep.source term verbatim pdf  (A3_summary.Rnw:345) 
+INFO  @ Fri, 15 Dec 2017 14:54:47:    7 : keep.source term verbatim pdf  (A3_summary.Rnw:489) 
+INFO  @ Fri, 15 Dec 2017 14:54:47:    8 : keep.source term verbatim (A3_summary.Rnw:567) 
+INFO  @ Fri, 15 Dec 2017 14:54:47:    9 : keep.source term verbatim pdf  (A3_summary.Rnw:573) 
+INFO  @ Fri, 15 Dec 2017 14:54:47:   10 : keep.source term verbatim pdf  (A3_summary.Rnw:691) 
+INFO  @ Fri, 15 Dec 2017 14:54:47:   11 : keep.source term verbatim pdf  (A3_summary.Rnw:835) 
+INFO  @ Fri, 15 Dec 2017 14:54:47:   12 : keep.source term verbatim pdf  (A3_summary.Rnw:979) 
+INFO  @ Fri, 15 Dec 2017 14:54:47:    
+INFO  @ Fri, 15 Dec 2017 14:54:47:   You can now run (pdf)latex on ‘A3_summary.tex’ 
+INFO  @ Fri, 15 Dec 2017 14:54:47:   Error in texi2dvi("A3_summary.tex", pdf = TRUE) :  
+INFO  @ Fri, 15 Dec 2017 14:54:47:     pdflatex is not available 
+INFO  @ Fri, 15 Dec 2017 14:54:47:   Execution halted 
+INFO  @ Fri, 15 Dec 2017 14:54:47:    
+INFO  @ Fri, 15 Dec 2017 14:54:47: End command message. 
+INFO  @ Fri, 15 Dec 2017 14:54:47: Running command: cd /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck; rm -rf A3_summary-*.pdf 
+INFO  @ Fri, 15 Dec 2017 14:54:47: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:54:47:    
+INFO  @ Fri, 15 Dec 2017 14:54:47: End command message. 
+INFO  @ Fri, 15 Dec 2017 14:54:47: Running command: cd /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck; rm -rf A3_summary.aux 
+INFO  @ Fri, 15 Dec 2017 14:54:48: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:54:48:    
+INFO  @ Fri, 15 Dec 2017 14:54:48: End command message. 
+INFO  @ Fri, 15 Dec 2017 14:54:48: Running command: cd /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck; rm -rf A3_summary.tex 
+INFO  @ Fri, 15 Dec 2017 14:54:48: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:54:48:    
+INFO  @ Fri, 15 Dec 2017 14:54:48: End command message. 
+INFO  @ Fri, 15 Dec 2017 14:54:48: Running command: cd /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/06_mageck; rm -rf A3_summary.toc 
+INFO  @ Fri, 15 Dec 2017 14:54:48: Command message: 
+INFO  @ Fri, 15 Dec 2017 14:54:48:    
+INFO  @ Fri, 15 Dec 2017 14:54:48: End command message. 
+[Fri Dec 15 14:54:48 2017] Finished job 0.
+[Fri Dec 15 14:54:48 2017] 1 of 1 steps (100%) done
+
+Can't find file /home/yuxinghai/.vnc/mu01:98.pid
+You'll have to kill the Xvnc process manually
+

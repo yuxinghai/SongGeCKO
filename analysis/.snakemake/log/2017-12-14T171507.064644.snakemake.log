@@ -1,0 +1,28 @@
+Building DAG of jobs...
+Provided cores: 28
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	merge_fastq
+	1
+
+rule merge_fastq:
+    input: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/NC-A1_combined_R1.fastq, /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/NC-A1_combined_R2.fastq
+    output: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/NC-A1_combined_merge.fastq
+    jobid: 0
+    wildcards: result_dir=/data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results, sample=NC-A1_combined
+
+Error in rule merge_fastq:
+    jobid: 0
+    output: /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/NC-A1_combined_merge.fastq
+
+RuleException:
+CalledProcessError in line 60 of /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/analysis/Snakefile:
+Command ' set -euo pipefail;  python /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/script/readfq.py /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/NC-A1_combined_R1.fastq /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/NC-A1_combined_R2.fastq /data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/NC-A1_combined_merge.fastq ' returned non-zero exit status 1.
+  File "/data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/analysis/Snakefile", line 60, in __rule_merge_fastq
+  File "/home/yuxinghai/.conda/envs/py36/lib/python3.6/concurrent/futures/thread.py", line 56, in run
+Removing output files of failed job merge_fastq since they might be corrupted:
+/data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/NC-A1_combined_merge.fastq
+Will exit after finishing currently running jobs.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2017-12-14T171507.064644.snakemake.log

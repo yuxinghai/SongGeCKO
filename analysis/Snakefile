@@ -1,0 +1,179 @@
+root_dir="/data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2"
+raw_dir=root_dir+'/data/N04664_ZN_80-105213358_ampliSEQ/PF_data/combined'
+result_dir=root_dir+'/results'
+script_dir=root_dir+'/script'
+sample=["NC-A1_combined"]
+sample_type=["A1","NC-A1","B1","NC-B1","A2","A3","B2"]
+
+rule all:
+    input:
+        expand("{result_dir}/01_fastqc/{sample}_R1_fastqc.html",result_dir=result_dir,sample=sample),
+        expand("{result_dir}/01_fastqc/{sample}_R2_fastqc.html",result_dir=result_dir,sample=sample),
+        expand("{result_dir}/02_decode/{sample}_R1.fastq",result_dir=result_dir,sample=sample),
+        expand("{result_dir}/02_decode/{sample}_R2.fastq",result_dir=result_dir,sample=sample),
+	expand("{result_dir}/02_decode/{sample}_merge.fastq",result_dir=result_dir,sample=sample),
+        expand("{result_dir}/02_decode/{sample}_merge_exacB.fastq",result_dir=result_dir,sample=sample),
+        expand("{result_dir}/02_decode/NC-B1.fq",result_dir=result_dir,sample_type=sample_type),
+	expand("{result_dir}/03_20nt_sgRNA/sg_NC-B1.fq",result_dir=result_dir),
+        expand("{result_dir}/03_20nt_sgRNA/sg_B2.fq",result_dir=result_dir),
+        expand("{result_dir}/04_map/NC-B1.sam",result_dir=result_dir),
+        expand("{result_dir}/05_count/screen_B1.csv",result_dir=result_dir),
+        expand("{result_dir}/06_mageck/B1.gene_summary.txt",result_dir=result_dir),
+        
+rule fastqc:
+    input:
+        R1= raw_dir + "/{sample}_R1.fastq.gz",
+        R2= raw_dir + "/{sample}_R2.fastq.gz",
+
+    output:
+        "{result_dir}/01_fastqc/{sample}_R1_fastqc.html",
+        "{result_dir}/01_fastqc/{sample}_R2_fastqc.html",
+
+    shell:
+        '''
+	fastqc -f fastq -t 2 --noextract -o {result_dir}/01_fastqc {input.R1} {input.R2}
+	'''
+
+
+rule gunzip:
+    input:
+        R1= raw_dir + "/{sample}_R1.fastq.gz",
+        R2= raw_dir + "/{sample}_R2.fastq.gz"
+
+    output:
+        R1= "{result_dir}/02_decode/{sample}_R1.fastq",
+        R2= "{result_dir}/02_decode/{sample}_R2.fastq"
+
+    shell:
+        '''
+        gunzip -c {input.R1} > {output.R1}
+        gunzip -c {input.R2} > {output.R2}
+        '''
+
+rule merge_fastq:
+    input:
+        R1= "{result_dir}/02_decode/{sample}_R1.fastq",
+        R2= "{result_dir}/02_decode/{sample}_R2.fastq"
+
+    output:
+        "{result_dir}/02_decode/{sample}_merge.fastq"
+
+    shell:
+        "python {script_dir}/readfq.py {input.R1} {input.R2} {output}"
+
+
+rule exact_barcode:
+    input:
+        "{result_dir}/02_decode/{sample}_merge.fastq"
+    output:
+        "{result_dir}/02_decode/{sample}_merge_exacB.fastq"
+
+    shell:
+        """
+        cat {input}| paste -d '\!' - - - - |grep 'TCTTGTGGAAAGGACGAAACACCG' >{output}
+        """
+
+rule sample_divide:
+    input:
+        "{result_dir}/02_decode/NC-A1_combined_merge_exacB.fastq"
+        
+
+    output:
+        "{result_dir}/02_decode/NC-B1.fq",
+        "{result_dir}/02_decode/NC-A1.fq",
+        "{result_dir}/02_decode/A1.fq",
+        "{result_dir}/02_decode/B1.fq",
+        "{result_dir}/02_decode/A2.fq",
+        "{result_dir}/02_decode/A3.fq",
+        "{result_dir}/02_decode/B2.fq"
+
+    shell:
+        "bash {script_dir}/sample_divide.sh {input}"
+
+
+rule exact_20nt_sgRNA:
+    input:
+        rules.sample_divide.output
+	
+    output:
+        "{result_dir}/03_20nt_sgRNA/sg_NC-B1.fq",
+        "{result_dir}/03_20nt_sgRNA/sg_NC-A1.fq",
+        "{result_dir}/03_20nt_sgRNA/sg_B1.fq",
+        "{result_dir}/03_20nt_sgRNA/sg_A1.fq",
+        "{result_dir}/03_20nt_sgRNA/sg_A2.fq",
+        "{result_dir}/03_20nt_sgRNA/sg_B2.fq",
+        "{result_dir}/03_20nt_sgRNA/sg_A3.fq"
+
+    shell:
+        "bash {script_dir}/03_exact_20nt_sgRNA.sh"
+
+
+rule map:
+    input:
+        rules.exact_20nt_sgRNA.output
+
+    output:
+        "{result_dir}/04_map/NC-B1.sam",
+        "{result_dir}/04_map/NC-A1.sam",
+        "{result_dir}/04_map/B1.sam",
+        "{result_dir}/04_map/A1.sam",
+        "{result_dir}/04_map/A2.sam",
+        "{result_dir}/04_map/B2.sam",
+        "{result_dir}/04_map/A3.sam"
+
+    shell:
+        "bash {script_dir}/04_map.sh"
+
+rule count:
+    input:
+        rules.map.output
+
+    output:
+       "{result_dir}/05_count/screen_A1.csv",
+       "{result_dir}/05_count/screen_B1.csv"
+
+    shell:
+       "bash {script_dir}/05_count.sh"
+
+
+rule mageck:
+    input:
+        rules.count.output
+
+    output:
+        "{result_dir}/06_mageck/A1.sgrna_summary.txt",
+        "{result_dir}/06_mageck/B1.sgrna_summary.txt",
+        "{result_dir}/06_mageck/A1.gene_summary.txt",
+        "{result_dir}/06_mageck/B1.gene_summary.txt"
+       
+
+    shell:
+        "bash {script_dir}/06_mageck.sh"
+
+
+rule mageck_result_analysis:
+    input:
+        A1="{result_dir}/06_mageck/A1.sgrna_summary.txt",
+        B1="{result_dir}/06_mageck/B1.sgrna_summary.txt"
+
+    output:
+        "{result_dir}/06_mageck/mageck_result.txt"
+
+    shell:
+        """
+        python {script_dir}/mageck_result_analysis.py {input.A} {input.B} {output}
+        """
+
+
+rule mageck_rank:
+    input:
+        rules.mageck_result_analysis.output
+
+    output:
+        "{result_dir}/06_mageck/rank_result.txt"
+
+    shell:
+        "python {script_dir}/rank_mageckresult.py {input} {output}"
+
+
+
