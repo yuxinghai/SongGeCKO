@@ -27,7 +27,7 @@ def select_proper_end(fastq1,fastq2):
 
     p="TCTTGTGGAAAGGACGAAACACCG"
 
-    n=int(int(subprocess.check_output(["wc", "-l", "/data2/zhoulab/yuxinghai/songlab/SongGeCKO_zn_2/results/02_decode/NC-A1_combined_R1.fastq"]).split()[0])/4)
+    n=int(int(subprocess.check_output(["wc", "-l",fastq1]).split()[0])/4)
     #print(n)
     #exit(0)
     for i in range(n):
